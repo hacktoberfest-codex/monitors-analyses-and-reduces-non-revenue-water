@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Signup</title>
+    <link rel="stylesheet" href="./signup.css">
+    <script src="./signup.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css">
+</head>
+
+<body>
+    <h1 class="first"><b>Signup to <span class="second">DROP BY DROP</span> data portal</b></h1>
+    <form onsubmit="return checkPassword(this)" action="log2" style="width: 497px; margin-left: 124px;" method="post">
+        <div class="container">
+            <p>Please fill in this form to create an account.</p>
+            <hr>
+
+            <p id="result"></p>
+
+            <label for="user"><b>Name</b></label>
+            <input type="text" name="user" placeholder="Enter Name" required>
+
+            <label for="phone"><b>Phone Number</b></label>
+            <input type="tel" name="phone" placeholder="Enter phone number" pattern="[0-9]{10}"
+                title="Must be a 10 digit number" required>
+
+            <label for="email"><b>Email</b></label>
+            <input type="text" placeholder="Enter Email" name="email" required>
+
+            <label for="addr"><b>Address</b></label>
+            <input type="text" name="addr" placeholder="Enter Address" required>
+
+            <label for="area"><b>Area</b></label>
+            <input type="text" name="area" placeholder="Enter Area" required>
+
+            <label for="mem"><b>Number of members</b></label>
+            <input type="number" name="mem" placeholder="Enter Members" required>
+
+            <label for="myInput"><b>Password</b></label>
+            <!-- <input type="password" placeholder="Enter Password" name="password" id="id_password" required> -->
+            <input type="password" id="myInput" name="pass"
+                    placeholder="Enter Password" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" title="Must contain at least one number and one uppercase and lowercase letter, 
+                and at least 8 or more characters" required>
+            <!-- <input type="password" name="pass" placeholder="Enter Password" autocomplete="current-password" required="" id="id_password">
+            <span style="margin-left: -10px; cursor: pointer;"><i class="far fa-eye" name="pass1" id="togglePassword" style="margin-left: -30px; cursor: pointer;"></i></span>
+            <br> -->
+            
+
+            <input style="margin-left: 315px; font-size: 15px" type="checkbox" onclick="myFunction()">Show Password
+            <br>
+
+            <label for="pass"><b>Confirm Password</b></label>
+            <input type="password" placeholder="Confirm Password" name="pass2" required>
+
+            <input type="checkbox" required>By creating an account you agree to our <a href="#"
+                style="color:darkblue">Terms & Privacy</a>
+
+            <div class="clearfix">
+                <!-- <button type="button" class="cancelbtn">Cancel</button>
+                <button type="submit" class="signupbtn">Sign Up</button> -->
+                <a href="http://localhost:8082/Hackerwar4.0_Team22/login.html"><input class="cancelbtn" type="button" value="Go back"></a>
+                <input class="signinbutn" type="submit" value="Submit">
+            </div>
+        </div>
+    </form>
+   
+</body>
+
+</html>
