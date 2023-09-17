@@ -34,7 +34,7 @@ public class Forgot extends HttpServlet {
     	{
     		Class.forName(d);
     		cn=DriverManager.getConnection(ur,us,pa);
-    		ps=cn.prepareStatement("select * from login_user where name=(?) and phone=(?)");
+    		ps=cn.prepareStatement("select * from consumer_user where username=(?) and password=(?)");
     		
     	}
     	catch(ClassNotFoundException ce)

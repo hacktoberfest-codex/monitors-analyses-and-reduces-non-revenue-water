@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Status</title>
+    <link rel="stylesheet" href="./status.css">
+    <script src="./status.js"></script>
+
+</head>
+<body>
+    <h1 class="first"><b>Your Status</b></h1>
+    <form onsubmit="return checkPassword(this)" action="log2" style="width: 497px; margin-left: 124px;" method="post" >
+        <div class="container">
+            <p>Please fill this form to pay your bill.</p>
+            <hr>
+            
+
+            <p id="result"></p>
+            <p style="color: red;"><b>Disclaimer:</b> According to our survey on an average 1 person uses 265 gallons of water per week </p>
+            
+            <!-- Number of guest -->
+            <label for="user"><b>Number of Guests (if any)</b></label>
+            <input type="number" name="mem" placeholder="Enter number of guests" required>
+
+            <div class="clearfix">
+                <!-- <button type="button" class="cancelbtn">Cancel</button>
+                <button type="submit" class="signupbtn">Sign Up</button> -->
+                <a href="#"><input class="cancelbtn" type="button" value="Go back"></a>
+                <input class="signinbutn" type="submit" value="Pay now">
+            </div>
+
+            
+
+            
+        </div>
+    </form>
+</body>
+</html>
