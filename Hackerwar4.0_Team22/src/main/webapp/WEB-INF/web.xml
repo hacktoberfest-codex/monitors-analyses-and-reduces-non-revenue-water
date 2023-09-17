@@ -2,7 +2,7 @@
 <web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="https://jakarta.ee/xml/ns/jakartaee" xmlns:web="http://xmlns.jcp.org/xml/ns/javaee" xsi:schemaLocation="https://jakarta.ee/xml/ns/jakartaee https://jakarta.ee/xml/ns/jakartaee/web-app_5_0.xsd" id="WebApp_ID" version="5.0">
   <display-name>Hackerwar4.0_Team22</display-name>
   <welcome-file-list>
-    <welcome-file>login.html</welcome-file>
+    <welcome-file>index.html</welcome-file>
     <welcome-file>index.jsp</welcome-file>
     <welcome-file>index.htm</welcome-file>
     <welcome-file>default.html</welcome-file>
@@ -53,6 +53,16 @@
   </servlet>
   <servlet-mapping>
     <servlet-name>Forgot</servlet-name>
-    <url-pattern>/Forgot</url-pattern>
+    <url-pattern>/log3</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>Admin_Dashboard</display-name>
+    <servlet-name>Admin_Dashboard</servlet-name>
+    <servlet-class>com.team22.Admin_Dashboard</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>Admin_Dashboard</servlet-name>
+    <url-pattern>/log4</url-pattern>
   </servlet-mapping>
 </web-app>

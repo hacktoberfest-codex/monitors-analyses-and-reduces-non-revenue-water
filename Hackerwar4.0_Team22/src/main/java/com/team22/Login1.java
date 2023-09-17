@@ -38,7 +38,7 @@ public class Login1 extends HttpServlet {
     	{
     		Class.forName(d);
     		cn=DriverManager.getConnection(ur,us,pa);
-    		ps=cn.prepareStatement("select * from consumer_user where consumerid=(?) and password=(?)");
+    		ps=cn.prepareStatement("select * from service_user where name=(?) and password=(?)");
     		
     	}
     	catch(ClassNotFoundException ce)
@@ -67,9 +67,65 @@ public class Login1 extends HttpServlet {
 			ResultSet rs=ps.executeQuery();
 			if(rs.next())
 			{
-				out.println("<html><body style='background-color:springgreen; color: red; font-size: 30px; text-align: center;'>");
-				out.println("<br><br><b>Welcome to DROP BY DROP portal</b>");
-				out.println("</body></html>");
+				out.println("<!DOCTYPE html>\r\n"
+						+ "<html lang=\"en\">\r\n"
+						+ "\r\n"
+						+ "<head>\r\n"
+						+ "    <meta charset=\"UTF-8\">\r\n"
+						+ "    <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">\r\n"
+						+ "    <title>Document</title>\r\n"
+						+ "    <style>\r\n"
+						+ "        body {\r\n"
+						+ "            background-image: url(./back9.jpg);\r\n"
+						+ "            background-size: cover;\r\n"
+						+ "        }\r\n"
+						+ "\r\n"
+						+ "        .first {\r\n"
+						+ "            color: blue;\r\n"
+						+ "            margin-left: 70px;\r\n"
+						+ "            margin-top: 90px;\r\n"
+						+ "        }\r\n"
+						+ "\r\n"
+						+ "        .second {\r\n"
+						+ "            color: green;\r\n"
+						+ "        }\r\n"
+						+ "\r\n"
+						+ "        .signinbutn {\r\n"
+						+ "            background-color: #04AA6D;\r\n"
+						+ "            color: white;\r\n"
+						+ "            padding: 14px 20px;\r\n"
+						+ "            margin: 8px 0;\r\n"
+						+ "            border: none;\r\n"
+						+ "            cursor: pointer;\r\n"
+						+ "            width: 50%;\r\n"
+						+ "            opacity: 0.9;\r\n"
+						+ "            /* height: 35px;\r\n"
+						+ "    width: 100px px; */\r\n"
+						+ "        }\r\n"
+						+ "\r\n"
+						+ "        button:hover {\r\n"
+						+ "            opacity: 1;\r\n"
+						+ "        }\r\n"
+						+ "\r\n"
+						+ "\r\n"
+						+ "        /* Float cancel and signup buttons and add an equal width */\r\n"
+						+ "        .cancelbtn,\r\n"
+						+ "        .signupbtn {\r\n"
+						+ "            float: left;\r\n"
+						+ "            width: 50%;\r\n"
+						+ "        }\r\n"
+						+ "    </style>\r\n"
+						+ "</head>\r\n"
+						+ "\r\n"
+						+ "<body>\r\n"
+						+ "    <h1 class=\"first\"><b>Welcome to <span class=\"second\">DROP BY DROP</span> data portal</b></h1>\r\n"
+						+ "    <a href=\"./admin_dashboard.html\"><input class=\"signinbutn\" type=\"button\" value=\"Admin Dashboard\"></a>\r\n"
+						+ "    <a href=\"./admin_dashboard.html\"><input class=\"signinbutn\" type=\"button\" value=\"Admin Dashboard\"></a>\r\n"
+						+ "    <a href=\"./admin_dashboard.html\"><input class=\"signinbutn\" type=\"button\" value=\"Admin Dashboard\"></a>\r\n"
+						+ "    <a href=\"./admin_dashboard.html\"><input class=\"signinbutn\" type=\"button\" value=\"Admin Dashboard\"></a>\r\n"
+						+ "</body>\r\n"
+						+ "\r\n"
+						+ "</html>");
 			}
 			else
 			{
