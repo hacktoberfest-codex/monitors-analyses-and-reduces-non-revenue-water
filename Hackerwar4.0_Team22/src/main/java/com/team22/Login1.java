@@ -120,9 +120,8 @@ public class Login1 extends HttpServlet {
 						+ "<body>\r\n"
 						+ "    <h1 class=\"first\"><b>Welcome to <span class=\"second\">DROP BY DROP</span> data portal</b></h1>\r\n"
 						+ "    <a href=\"./admin_dashboard.html\"><input class=\"signinbutn\" type=\"button\" value=\"Admin Dashboard\"></a>\r\n"
-						+ "    <a href=\"./admin_dashboard.html\"><input class=\"signinbutn\" type=\"button\" value=\"Admin Dashboard\"></a>\r\n"
-						+ "    <a href=\"./admin_dashboard.html\"><input class=\"signinbutn\" type=\"button\" value=\"Admin Dashboard\"></a>\r\n"
-						+ "    <a href=\"./admin_dashboard.html\"><input class=\"signinbutn\" type=\"button\" value=\"Admin Dashboard\"></a>\r\n"
+						+ "    <a href=\"./layouts-fullscreen.html\"><input class=\"signinbutn\" type=\"button\" value=\"Total Flow and Usage\"></a>\r\n"
+			
 						+ "</body>\r\n"
 						+ "\r\n"
 						+ "</html>");
