@@ -104,7 +104,9 @@ public class Signup extends HttpServlet {
 //            {
 //            	con_num =rs.getInt(1);
 //            }
-			out.println("<html><body style='background-color:lightcoral; color: blue; font-size: 30px; text-align: center;'>");
+			out.println("<html><body style='background-image: url(./back9.jpg);\r\n"
+					+ "background-size: cover; color: blue; font-size: 30px;\r\n"
+					+ "text-align: center;'>");
 			out.println("<br><br><b>Welcome to DROP BY DROP portal</b>");
 			out.println("<br><br><b>Your Consumer Number is </b>"+consumer_num);
 			out.println("<br><a href='http://localhost:8082/Hackerwar4.0_Team22/login.html'>Login</a>");
