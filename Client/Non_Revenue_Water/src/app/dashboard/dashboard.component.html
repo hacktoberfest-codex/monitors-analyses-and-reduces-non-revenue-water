@@ -1,0 +1,273 @@
+<!-- <section>
+        <div class="card">
+            <h3>Number of Withdrawal</h3>
+            <p>10</p>
+        </div>
+        <div class="card">
+            <h3>Number of Deposit</h3>
+            <p>10</p>
+        </div>
+        <div class="card">
+            <h3>Number of Transfer</h3>
+            <p>10</p>
+        </div>
+        <div class="table-container">
+            <h2>Last 5 Transactions</h2>
+            <table aria-describedby="Account detail">
+                <thead>
+                    <tr>
+                        <th>Timestamp</th>
+                        <th>Transaction mode</th>
+                        <th>Amount</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>6 may 2024</td>
+                        <td>CREDIT</td>
+                        <td>{{ 12490.98 | currency : "INR" }}</td>
+                    </tr>
+                    <tr>
+                        <td>6 may 2024</td>
+                        <td>CREDIT</td>
+                        <td>{{ 42490.98 | currency : "INR" }}</td>
+                    </tr>
+                    <tr>
+                        <td>6 may 2024</td>
+                        <td>CREDIT</td>
+                        <td>{{ 48690.98 | currency : "INR" }}</td>
+                    </tr>
+                    <tr>
+                        <td>6 may 2024</td>
+                        <td>CREDIT</td>
+                        <td>{{ 48690.98 | currency : "INR" }}</td>
+                    </tr>
+                    <tr>
+                        <td>6 may 2024</td>
+                        <td>CREDIT</td>
+                        <td>{{ 48690.98 | currency : "INR" }}</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </section> -->
+<!-- <div class="row">
+        <div class="col-lg-3 col-md-6 col-sm-6">
+            <div class="card" style="width: 18rem;">
+                <div class="card-body">
+                  <h5 class="card-title">Card title</h5>
+                  <h6 class="card-subtitle mb-2 text-muted">Card subtitle</h6>
+                  <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                  <a href="#" class="card-link">Card link</a>
+                  <a href="#" class="card-link">Another link</a>
+                </div>
+              </div>
+        </div>
+        <div class="col-lg-3 col-md-6 col-sm-6">
+            
+        </div>
+        <div class="col-lg-3 col-md-6 col-sm-6">
+            
+        </div>
+    </div> -->
+<!-- <div #containerRef>
+        <ngx-charts-number-card
+       
+        [view]="[700,400]"
+       [cardColor]="cardColor"
+        
+        [results]="data"
+        [animations]="true"
+        
+       
+      >
+        </ngx-charts-number-card>
+        <ngx-charts-bar-vertical
+        [view]="[600,400]"
+        [scheme]="colorScheme"
+        [results]="data"
+        [gradient]="gradient"
+        [xAxis]="showXAxis"
+        [yAxis]="showYAxis"
+        [legend]="showLegend"
+        [showXAxisLabel]="showXAxisLabel"
+        [showYAxisLabel]="showYAxisLabel"
+        [xAxisLabel]="xAxisLabel"
+        [yAxisLabel]="yAxisLabel"
+        [legendTitle]="legendTitle"
+        [animations]="true">
+        </ngx-charts-bar-vertical>
+        <ngx-charts-pie-chart
+        [view]="[1000,300]"
+        [scheme]="colorScheme"
+        [results]="data"
+        
+        [legend]="showLegend"
+        [labels]="true"
+        [animations]="true"
+       
+        >
+        </ngx-charts-pie-chart>
+    </div> -->
+
+
+<!-- <ngx-charts-number-card
+       
+        [view]="[700,400]"
+       [cardColor]="cardColor"
+        [scheme]="colorScheme"
+        [results]="data"
+        [animations]="true"
+        
+       
+      >
+        </ngx-charts-number-card> -->
+<main>
+    <app-header></app-header>
+    <app-sidebar></app-sidebar>
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-3">
+                <div class="card card1">
+                    <div class="card-body">
+                        <h2 class="card-title">Revenue</h2>
+                        <h3 class="card-text">{{revenue|currency:'INR'}}</h3>
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-3">
+                <div class="card card1">
+                    <div class="card-body">
+                        <h2 class="card-title">Complaints</h2>
+                        <h3 class="card-text">{{complaints}}</h3>
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-3">
+                <div class="card card1">
+                    <div class="card-body">
+                        <h2 class="card-title">New Connections</h2>
+                        <h3 class="card-text">{{newConnections}}</h3>
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-3">
+                <div class="card card1">
+                    <div class="card-body">
+                        <h2 class="card-title">House Registered</h2>
+                        <h3 class="card-text">{{houseRegistered}}</h3>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col">
+                <div class="card">
+                    <div class="card-body">
+                        <h1 class="card-title" style="text-align: center; background: -webkit-linear-gradient(to right, #237A57, #093028);
+                        background: linear-gradient(to right, #237A57, #093028);
+                        color: var(--primary-white);">Revenue By Month</h1>
+                        <div class="row">
+                            <div class="col-sm-6">
+                                <div class="card ">
+                                    <div class="card-body">
+                                        <h3 class="card-title">Previous Month</h3>
+                                        <h3 class="card-text">{{previousMonthRevenue|currency:'INR'}}</h3>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-sm-6">
+                                <div class="card ">
+                                    <div class="card-body">
+                                        <h3 class="card-title">Current Month</h3>
+                                        <h3 class="card-text">{{currentMonthRevenue|currency:'INR'}}</h3>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <ngx-charts-line-chart [view]="[600,400]" [scheme]="colorScheme" [results]="data1"
+                            [gradient]="gradient" [xAxis]="showXAxis" [yAxis]="showYAxis" [legend]="showLegend"
+                            [showXAxisLabel]="showXAxisLabel" [showYAxisLabel]="showYAxisLabel"
+                            [xAxisLabel]="xAxisLabel" [yAxisLabel]="yAxisLabel" [legendTitle]="legendTitle"
+                            [animations]="true">
+                        </ngx-charts-line-chart>
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+        <div class="row">
+            <div class="col">
+                <div class="card">
+                    <div class="card-body">
+                        <h1 class="card-title" style="text-align: center; background: -webkit-linear-gradient(to right, #237A57, #093028);
+                        background: linear-gradient(to right, #237A57, #093028);
+                        color: var(--primary-white);">Revenue By Locatiom</h1>
+                        <ngx-charts-pie-chart [view]="[1000,300]" [scheme]="colorScheme" [results]="data"
+                            [legend]="showLegend" [labels]="true" [animations]="true">
+                        </ngx-charts-pie-chart>
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+        <div class="row">
+            <div class="col-sm-8">
+                <div class="card">
+                    <div class="card-body">
+                        <h1 class="card-title" style="text-align: center; background: -webkit-linear-gradient(to right, #237A57, #093028);
+                        background: linear-gradient(to right, #237A57, #093028);
+                        color: var(--primary-white);">Water Outflow & Inflow</h1>
+                        <ngx-charts-line-chart [view]="[600,400]" [scheme]="colorScheme" [results]="data1"
+                            [gradient]="gradient" [xAxis]="showXAxis" [yAxis]="showYAxis" [legend]="showLegend"
+                            [showXAxisLabel]="showXAxisLabel" [showYAxisLabel]="showYAxisLabel"
+                            [xAxisLabel]="xAxisLabel" [yAxisLabel]="yAxisLabel" [legendTitle]="legendTitle"
+                            [animations]="true">
+                        </ngx-charts-line-chart>
+                    </div>
+
+                </div>
+
+            </div>
+            <div class="col-sm-4">
+                <div class="row">
+                    <div class="col">
+                        <div class="card card1">
+                            <div class="card-body">
+                                <h2 class="card-title">Water Outflow</h2>
+                                <h3 class="card-text">{{waterOutflow}}</h3>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col">
+                        <div class="card card1">
+                            <div class="card-body">
+                                <h2 class="card-title">Water Inflow</h2>
+                                <h3 class="card-text">{{waterInflow}}</h3>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col">
+                        <div class="card card1">
+                            <div class="card-body">
+                                <h2 class="card-title">Total Loss</h2>
+                                <h3 class="card-text">{{totalLoss}}</h3>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+    </div>
+</main>

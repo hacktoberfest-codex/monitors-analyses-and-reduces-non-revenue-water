@@ -1,0 +1,42 @@
+main {
+    min-height: 100dvh;
+    display: grid;
+    grid-template-columns: auto 1fr;
+    grid-template-rows: auto 1fr;
+    grid-template-areas:
+        "aside header"
+        "aside section";
+}
+
+app-header {
+    grid-area: header;
+}
+
+app-sidebar {
+    grid-area: aside;
+}
+
+.card1 {
+    background: -webkit-linear-gradient(to right, #237A57, #093028);
+    background: linear-gradient(to right, #237A57, #093028);
+    color: var(--primary-white);
+    font-family: 'Times New Roman', Times, serif;
+    border-radius: 1rem;
+    box-shadow: 5px 5px 5px var(--primary-shadow);
+}
+
+.card {
+    box-shadow: 5px 5px 5px var(--primary-shadow);
+    background-color: transparent;
+    font-family: 'Times New Roman', Times, serif;
+}
+
+.row {
+    margin: 20px;
+}
+
+h2, h3 {
+    text-align: center;
+    /* margin-block: 0.5rem; */
+}
+

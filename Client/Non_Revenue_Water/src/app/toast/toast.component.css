@@ -1,0 +1,37 @@
+.alert-box {
+    width: 300px;
+    position: fixed;
+    z-index: 100;
+    right: 0.5rem;
+    top: 5%;
+    animation: right-side 0.25s;
+    font-family: 'Times New Roman', Times, serif;
+    background: #093028;
+    background: -webkit-linear-gradient(to right, #237A57, #093028);
+    background: linear-gradient(to right, #237A57, #093028);
+    color: var(--primary-white);
+    box-shadow: 5px 5px 5px var(--primary-shadow);
+    border-radius: 1rem;
+}
+
+.alert-header h2 {
+    text-align: center;
+    font-family: 'Times New Roman', Times, serif;
+    padding: 0.5rem;
+}
+
+.alert-body {
+    padding: 0.5rem;
+}
+
+@keyframes right-side {
+    from {
+        right: -100px;
+        opacity: 0;
+    }
+
+    to {
+        right: 1rem;
+        opacity: 1;
+    }
+}
