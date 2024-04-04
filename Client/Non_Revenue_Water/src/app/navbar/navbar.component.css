@@ -1,0 +1,19 @@
+nav {
+    background: -webkit-linear-gradient(to right, #237A57, #093028);
+    background: linear-gradient(to right, #237A57, #093028);
+    font-family: 'Times New Roman', Times, serif;
+
+}
+
+ul>li>a:hover,
+.active {
+    background-color: white;
+
+
+}
+
+ul>li>a {
+    background-color: transparent;
+    color: var(--secondary-white);
+    font-size: large;
+}

@@ -1,21 +1,24 @@
 <header>
-    <h1>DROP BY DROP</h1>
+    <app-navbar></app-navbar>
 </header>
 
-<section>
-    <div class="form-header">
-        <h2>LOGIN</h2>
+<div class="container">
+    <div class="row">
+        <div class="form-header">
+            <h2>LOGIN</h2>
+        </div>
+        <div class="form-body">
+            <form method="post" #logininForm="ngForm" (ngSubmit)="onLogin(logininForm)">
+                <input type="text" placeholder="Email" name="accountEmail" required ngModel />
+                <input type="password" placeholder="Password" name="accountPassword" required ngModel />
+                <input type="submit" value="Login" class="btn btn-success" [disabled]="!logininForm.valid">
+            </form>
+        </div>
+        <div class="form-footer">
+            <p>Don't have an account?</p>
+            <a routerLink="/signup">Sign up now</a>
+        </div>
     </div>
-    <div class="form-body">
-        <form method="post" #logininForm="ngForm" (ngSubmit)="onLogin(logininForm)">
-            <input type="text" placeholder="Email" name="accountEmail" required ngModel />
-            <input type="password" placeholder="Password" name="accountPassword" required ngModel />
-            <input type="submit" value="Login" class="btn btn-success" [disabled]="!logininForm.valid">
-        </form>
-    </div>
-    <div class="form-footer">
-        <p>Don't have an account?</p>
-        <a routerLink="/signup">Sign up now</a>
-    </div>
-</section>
+
+</div>
 <app-toast *ngIf="toastVisible" [heading]="toastHeading" [description]="toastDescription"></app-toast>

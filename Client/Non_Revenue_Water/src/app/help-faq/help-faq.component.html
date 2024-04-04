@@ -1,0 +1,227 @@
+<header>
+    <app-navbar></app-navbar>
+</header>
+
+<section id="faq">
+
+    <div class="container faq">
+
+        <div class="container">
+
+            <div class="row">
+
+                <div class="col-sm-12">
+
+                    <div class="accordions">
+
+                        <!-- 1st accordion menu -->
+
+                        <div class="accordion-item">
+
+                            <div class="accordion-title" data-tab="item1">
+
+                                <h3>Why is NRW important? <i class="fa fa-chevron-down"></i></h3>
+
+                            </div>
+
+                            <div class="accordion-content" id="item1">
+
+                                <p>
+
+                                    When a significant amount of water is lost, it represents a loss of revenue for the
+                                    utility. High NRW means that more water needs to be extracted, treated, and
+                                    distributed, which can strain water resources and energy supplies.
+                                </p>
+
+                            </div>
+
+                        </div>
+
+                        <!--- 2nd accordion menu -->
+
+                        <div class="accordion-item">
+
+                            <div class="accordion-title" data-tab="item2">
+
+                                <h3>What causes NRW? <i class="fa fa-chevron-down"></i></h3>
+
+                            </div>
+
+                            <div class="accordion-content" id="item2">
+
+                                <p>
+
+                                    Leakage, Burst Pipes, Water Theft, Metering and Billing Errors Unauthorized
+                                    Consumption Data Handling Errors
+                                </p>
+
+                            </div>
+
+                        </div>
+
+                        <!-- 3rd accordion menu -->
+
+                        <div class="accordion-item">
+
+                            <div class="accordion-title" data-tab="item3">
+
+                                <h3>What are the common methods for measuring NRW ?<i class="fa fa-chevron-down"></i>
+                                </h3>
+
+                            </div>
+
+                            <div class="accordion-content" id="item3">
+
+                                <p>
+                                    Methods for measuring NRW are by installing flow meters at strategic points,Pressure
+                                    Management,Acoustic Leak Detection.
+                                </p>
+
+                            </div>
+
+                        </div>
+                        <!-- 4th accordion menu -->
+
+                        <div class="accordion-item">
+
+                            <div class="accordion-title" data-tab="item4">
+
+                                <h3>How can I report water leaks or suspected theft in my area?<i
+                                        class="fa fa-chevron-down"></i></h3>
+
+                            </div>
+
+                            <div class="accordion-content" id="item4">
+
+                                <p>
+                                    Residents can report water-related issues to their local water utility or
+                                    authorities and also select this reason for water loss.
+                                </p>
+
+                            </div>
+
+                        </div>
+                        <div class="accordion-item">
+
+                            <div class="accordion-title" data-tab="item7">
+
+                                <h3>Is this website user friendly?<i class="fa fa-chevron-down"></i></h3>
+
+                            </div>
+
+                            <div class="accordion-content" id="item7">
+
+                                <p>
+                                    Yes,it is easily accessible,secure,well designed and organized layout and users can
+                                    easily pay their monthly water bills.
+                                </p>
+
+                            </div>
+
+                        </div>
+
+                        <!-- 5th accordion menu -->
+
+                        <div class="accordion-item">
+
+                            <div class="accordion-title" data-tab="item5">
+
+                                <h3>Is the generated water bill correct? <i class="fa fa-chevron-down"></i></h3>
+
+                            </div>
+
+                            <div class="accordion-content" id="item5">
+
+                                <p>
+
+                                    Yes,the accuracy of the meter reading,the billing calculations and the biling
+                                    practices of the water utility is according to the user's input data only.
+
+                                </p>
+
+                            </div>
+
+                        </div>
+                        <div class="accordion-item">
+
+                            <div class="accordion-title" data-tab="item6">
+
+                                <h3>Does this website really help government authorities in managing NRW?<i
+                                        class="fa fa-chevron-down"></i></h3>
+
+                            </div>
+
+                            <div class="accordion-content" id="item6">
+
+                                <p>
+                                    Yes,because we provide real time monitoring analytics and reporting tools,leak
+                                    detection,education and awareness.
+                                </p>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<script>
+
+    $(document).ready(function () {
+
+        $(".accordion-title").click(function (e) {
+
+            var accordionitem = $(this).attr("data-tab");
+
+            $("#" + accordionitem)
+
+                .slideToggle()
+
+                .parent()
+
+                .siblings()
+
+                .find("..accordion-content")
+
+                .slideUp();
+
+            $(this).toggleClass("active-title");
+
+            $("#" + accordionitem)
+
+                .parent()
+
+                .siblings()
+
+                .find(".accordion-title")
+
+                .removeClass("active-title");
+
+            $("i.fa-chevron-down", this).toggleClass("chevron-top");
+
+            $("#" + accordionitem)
+
+                .parent()
+
+                .siblings()
+
+                .find(".accordion-title i.fa-chevron-down")
+
+                .removeClass("chevron-top");
+
+        });
+
+    });
+
+</script>

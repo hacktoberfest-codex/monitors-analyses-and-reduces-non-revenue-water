@@ -19,6 +19,13 @@ import { ModalComponent } from './modal/modal.component';
 import { ProfileComponent } from './profile/profile.component';
 import { HomeComponent } from './home/home.component';
 import { NgxChartsModule } from '@swimlane/ngx-charts';
+import { NavbarComponent } from './navbar/navbar.component';
+import { ServiceProvidedComponent } from './service-provided/service-provided.component';
+import { AboutUsComponent } from './about-us/about-us.component';
+import { OurTeamComponent } from './our-team/our-team.component';
+import { HelpFaqComponent } from './help-faq/help-faq.component';
+// import {MatSidenav} from '@angular/material/sidenav';
+
 
 
 
@@ -37,6 +44,11 @@ import { NgxChartsModule } from '@swimlane/ngx-charts';
     ModalComponent,
     ProfileComponent,
     HomeComponent,
+    NavbarComponent,
+    ServiceProvidedComponent,
+    AboutUsComponent,
+    OurTeamComponent,
+    HelpFaqComponent,
 
 
   ],
@@ -48,7 +60,8 @@ import { NgxChartsModule } from '@swimlane/ngx-charts';
     HttpClientModule,
     RouterLinkActive,
     NgxChartsModule,
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
+    // MatSidenav
   ],
   providers: [],
   bootstrap: [AppComponent]

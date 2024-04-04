@@ -1,22 +1,15 @@
 header {
-    background: #093028;
-    background: -webkit-linear-gradient(to right, #237A57, #093028);
-    background: linear-gradient(to right, #237A57, #093028);
-    color: var(--primary-white);
-    text-align: center;
-    font-family: 'Times New Roman', Times, serif;
-    padding-block: 1rem;
     box-shadow: 5px 5px 5px var(--primary-shadow);
 }
 
-section {
-    background-color: var(--primary-white);
+.row {
     box-shadow: 10px 10px 10px var(--primary-shadow);
     border-radius: 1rem;
+    margin-top: 60px;
+    margin-left: 20%;
+    margin-right: 20%;
+    background-color: var(--primary-white);
     font-family: 'Times New Roman', Times, serif;
-    width: clamp(300px, 50%, 500px);
-    padding-bottom: 1rem;
-    margin: 1rem auto;
 }
 
 .form-header {
@@ -67,4 +60,3 @@ textarea {
     place-items: center;
     margin-block: 0.5rem;
 }
-

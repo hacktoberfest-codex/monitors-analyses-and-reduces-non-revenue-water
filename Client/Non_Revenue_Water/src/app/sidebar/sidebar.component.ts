@@ -1,4 +1,4 @@
-import { Component,inject } from '@angular/core';
+import { Component, inject } from '@angular/core';
 import { Router } from '@angular/router';
 
 @Component({
@@ -8,10 +8,17 @@ import { Router } from '@angular/router';
 })
 export class SidebarComponent {
   router = inject(Router);
-  
+
   onLogout() {
     localStorage.removeItem("account");
     this.router.navigateByUrl("/signin")
   }
+  // @ViewChild('sidenav')
+  // sidenav!: MatSidenav;
+
+  // opened: boolean | undefined;
+  // clickHandler() {
+  //   this.sidenav.close();
+  // }
 
 }

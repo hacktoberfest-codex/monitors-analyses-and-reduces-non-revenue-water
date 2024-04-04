@@ -1,22 +1,17 @@
-.back {
-    /* background: #2193b0; 
-    background: -webkit-linear-gradient(to right, #2193b0, #6dd5ed); 
-    background: linear-gradient(to right, #2193b0, #6dd5ed);  */
-    /* background: #0F2027;
-    background: -webkit-linear-gradient(to right, #2C5364, #203A43, #0F2027);
-    background: linear-gradient(to right, #2C5364, #203A43, #0F2027); */
-    /* background: #00b09b;
-    background: -webkit-linear-gradient(to right, #96c93d, #00b09b);
-    background: linear-gradient(to right, #96c93d, #00b09b); */
-    /* background: #159957;
-    background: -webkit-linear-gradient(to right, #155799, #159957);
-    background: linear-gradient(to right, #155799, #159957); */
-    background: #093028;
-    background: -webkit-linear-gradient(to right, #237A57, #093028);
-    background: linear-gradient(to right, #237A57, #093028);
-    color: var(--primary-white);
+header {
+    background-image: url(../../assets/final_bg.jpg);
+    background-size: cover;
+    /* height: 44rem; */
+}
+
+.my-auto {
+    margin-bottom: auto !important;
+    margin-top: auto !important;
+}
+
+.display-3 {
+    font-weight: 700;
+    line-height: 1;
+    font-size: 4rem;
     font-family: 'Times New Roman', Times, serif;
-    text-align: center;
-    padding-block: 1rem;
-    box-shadow: 5px 5px 5px var(--primary-shadow);
 }

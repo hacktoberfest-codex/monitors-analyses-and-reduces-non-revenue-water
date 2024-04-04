@@ -57,5 +57,5 @@ button:hover,
     background: linear-gradient(to right, #0f3443, #34e89e); */
     background: #159957;
     background: -webkit-linear-gradient(to right, #155799, #159957);
-    background: linear-gradient(to right, #155799, #159957);
+    background: linear-gradient(to right, #155799, #159957); 
 }

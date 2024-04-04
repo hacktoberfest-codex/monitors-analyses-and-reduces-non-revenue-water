@@ -1,0 +1,120 @@
+header {
+  box-shadow: 5px 5px 5px var(--primary-shadow);
+}
+
+.service-grid {
+  background: #6ea2a7;
+  background-size: cover;
+}
+
+.service-title h4 {
+  position: relative;
+  display: inline-block;
+}
+
+.service-title {
+  background: -webkit-linear-gradient(to right, #237A57, #093028);
+  background: linear-gradient(to right, #237A57, #093028);
+  font-family: 'Times New Roman', Times, serif;
+  color: white;
+}
+
+.service-icon {
+  position: relative;
+}
+
+.service-title p {
+  padding: 0 190px;
+  margin-bottom: 10px;
+}
+
+.about-info-text h2 {
+  margin-bottom: 23px;
+  text-transform: capitalize;
+  font-weight: 700;
+  line-height: 0.9;
+}
+
+.about-info-text p {
+  padding: 0 100px;
+  font-size: 18px;
+  margin-bottom: 26px;
+  position: relative;
+}
+
+.about-content p {
+  margin-bottom: 0;
+}
+
+.about-info-text a {
+  margin-bottom: 20px;
+  position: relative;
+}
+
+.service-icon i {
+  font-size: 40px;
+
+  margin-bottom: 20px;
+  display: inline-block;
+}
+
+.service-wrap {
+  border: 1px solid #e6e6e6;
+  padding: 50px 30px;
+  position: relative;
+  text-decoration: dashed;
+}
+
+.service-wrap p {
+  position: relative;
+}
+
+.service-wrap:hover {
+  background-image: url(https://th.bing.com/th/id/R.389416c3f4b48bfa91c89b7bb4a66a59?rik=JsCX4%2fZKwjO84g&riu=http%3a%2f%2fwww.clipartbest.com%2fcliparts%2fRTG%2fE6q%2fRTGE6qXgc.gif&ehk=OcStVvRMDK8rSvl2yx%2fBF2K0%2bFmmzULM7q5G1uQ%2fL9o%3d&risl=&pid=ImgRaw&r=0);
+  background-size: cover;
+  background-position: center center;
+  background-attachment: local;
+  transition: all 0.5s;
+}
+
+.service-wrap:hover:before {
+  background: rgba(0, 0, 0, 0.2901960784313726);
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  left: 0px;
+  content: "";
+  top: 0;
+  opacity: 1;
+}
+
+.service-wrap:hover h4,
+.service-wrap:hover p {
+  color: #141313;
+}
+
+.service-wrap h4 {
+  font-weight: 600;
+  color: #1e2331;
+  margin-bottom: 17px;
+  font-size: 18px;
+  text-transform: capitalize;
+  position: relative;
+}
+
+.service-wrap a {
+  font-size: 14px;
+  font-weight: 600;
+  position: relative;
+}
+
+button {
+  display: inline-block;
+  background: -webkit-linear-gradient(to right, #237A57, #093028);
+  background: linear-gradient(to right, #237A57, #093028);
+  font-family: 'Times New Roman', Times, serif;
+  padding: 10px;
+  width: 200px;
+  color: #ffffff;
+  text-align: center;
+}
