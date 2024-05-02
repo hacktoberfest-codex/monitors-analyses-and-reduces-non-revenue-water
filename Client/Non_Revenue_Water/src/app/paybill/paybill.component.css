@@ -1,0 +1,13 @@
+
+  .card {
+    box-shadow: 5px 5px 5px var(--primary-shadow);
+    background-color: whitesmoke;
+  }
+  
+  .row {
+    margin: 20px;
+  }
+
+  /* .card-body {
+    text-align: center;
+  } */

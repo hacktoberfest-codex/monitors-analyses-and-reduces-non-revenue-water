@@ -1,0 +1,119 @@
+mat-toolbar {
+    background: #4b6cb7;
+    background: -webkit-linear-gradient(to right, #182848, #4b6cb7);
+    background: linear-gradient(to right, #182848, #4b6cb7);
+    color: white;
+  }
+  
+  mat-sidenav {
+    margin: 16px;
+    width: 200px;
+    border-right: none;
+    background: #4b6cb7;
+    background: -webkit-linear-gradient(to right, #182848, #4b6cb7);
+    background: linear-gradient(to right, #182848, #4b6cb7);
+    color: white;
+    border-radius: 10px;
+    padding: 16px;
+    text-align: center;
+  }
+  
+  .content {
+    /* height: calc(100vh - 98px); */
+    border-radius: 10px;
+    /* margin: 16px; */
+    margin-left: 32px;
+  
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  
+    /* font-size: 2rem; */
+    /* color: lightgray; */
+  }
+  
+  mat-sidenav-container {
+    height: calc(100vh - 65px);
+  }
+  
+  .menu-button {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    font-size: 1rem;
+  
+    /* mat-icon {
+        margin-right: 8px;
+    } */
+  }
+  
+  .avatar {
+    margin-top: 16px;
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+  }
+  
+  .name {
+    margin-top: 8px;
+    font-weight: normal;
+  }
+  
+  .designation {
+    margin-top: 2px;
+    font-size: 0.7rem;
+    color: lightgrey;
+  }
+  
+  mat-divider {
+    margin-top: 16px;
+    margin-bottom: 16px;
+    background-color: rgba(255, 255, 255, 0.5);
+  }
+  
+  .card-body {
+    text-align: center;
+  }
+  
+  
+  .card {
+    box-shadow: 5px 5px 5px var(--primary-shadow);
+    background-color: whitesmoke;
+  }
+  
+  .row {
+    margin: 20px;
+  }
+  
+  a,
+  button {
+    outline: none;
+    border: none;
+    background-color: transparent;
+    color: var(--secondary-white);
+    text-decoration: none;
+    font-size: large;
+    display: block;
+    padding: 0.5rem;
+    border-radius: 0.5rem;
+    cursor: pointer;
+  }
+  
+  
+  button:hover,
+  .active {
+    /* background: #373B44;
+      background: -webkit-linear-gradient(to right, #4286f4, #373B44);
+      background: linear-gradient(to right, #4286f4, #373B44); */
+    /* background: #34e89e;
+      background: -webkit-linear-gradient(to right, #0f3443, #34e89e);
+      background: linear-gradient(to right, #0f3443, #34e89e); */
+    /* background: #159957;
+    background: -webkit-linear-gradient(to right, #155799, #159957);
+    background: linear-gradient(to right, #155799, #159957); */
+    background: #00c6ff;
+    background: -webkit-linear-gradient(to right, #0072ff, #00c6ff);
+    background: linear-gradient(to right, #0072ff, #00c6ff);
+  
+  }

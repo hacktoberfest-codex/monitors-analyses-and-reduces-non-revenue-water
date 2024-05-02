@@ -1,0 +1,43 @@
+<div class="container">
+    <div class="row">
+        <div class="col-md-6">
+            <div class="card">
+                <div class="card-body">
+                    <h4 class="card-title" style="text-align: center; background: #4b6cb7;
+                        background: -webkit-linear-gradient(to right, #182848, #4b6cb7);
+                        background: linear-gradient(to right, #182848, #4b6cb7);
+                        color: var(--primary-white);">Monthly Usage</h4>
+
+                    <ngx-charts-line-chart [view]="[500,300]" [scheme]="colorScheme" [results]="data1"
+                        [gradient]="gradient" [xAxis]="showXAxis" [yAxis]="showYAxis" [legend]="showLegend"
+                        [showXAxisLabel]="showXAxisLabel" [showYAxisLabel]="showYAxisLabel" [xAxisLabel]="xAxisLabel"
+                        [yAxisLabel]="yAxisLabel" [legendTitle]="legendTitle" [animations]="true">
+                    </ngx-charts-line-chart>
+                </div>
+
+            </div>
+
+        </div>
+        <div class="col-md-6">
+            <div class="card">
+                <div class="card-body">
+                    <h4 class="card-title" style="text-align: center; background: #4b6cb7;
+                        background: -webkit-linear-gradient(to right, #182848, #4b6cb7);
+                        background: linear-gradient(to right, #182848, #4b6cb7);
+                        color: var(--primary-white);">Weekly Usage</h4>
+
+                    <ngx-charts-bar-vertical [view]="[500,300]" [scheme]="colorScheme1" [results]="data2"
+                        [gradient]="gradient1" [xAxis]="showXAxis1" [yAxis]="showYAxis1" [legend]="showLegend1"
+                        [showXAxisLabel]="showXAxisLabel1" [showYAxisLabel]="showYAxisLabel1" [xAxisLabel]="xAxisLabel1"
+                        [yAxisLabel]="yAxisLabel1" >
+                    </ngx-charts-bar-vertical>
+                </div>
+
+            </div>
+
+        </div>
+
+
+    </div>
+
+</div>

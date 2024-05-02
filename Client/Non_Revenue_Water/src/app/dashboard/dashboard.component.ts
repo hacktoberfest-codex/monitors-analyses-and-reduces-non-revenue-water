@@ -83,4 +83,8 @@ export class DashboardComponent {
     },
   ]
 
+  ngOnInit(): void {
+    console.log('dashboard')
+  }
+
 }

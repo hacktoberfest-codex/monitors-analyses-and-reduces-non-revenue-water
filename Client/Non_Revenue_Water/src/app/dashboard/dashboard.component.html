@@ -1,87 +1,114 @@
-<main>
-    <app-header></app-header>
-    <app-sidebar></app-sidebar>
-    <div class="container">
-        <div class="row">
-            <div class="col-sm-3">
-                <div class="card card1">
-                    <div class="card-body">
-                        <h2 class="card-title">Revenue</h2>
-                        <h3 class="card-text">{{revenue|currency:'INR'}}</h3>
-                    </div>
-                </div>
-            </div>
-            <div class="col-sm-3">
-                <div class="card card1">
-                    <div class="card-body">
-                        <h2 class="card-title">Complaints</h2>
-                        <h3 class="card-text">{{complaints}}</h3>
-                    </div>
-                </div>
-            </div>
-            <div class="col-sm-3">
-                <div class="card card1">
-                    <div class="card-body">
-                        <h2 class="card-title">New Connections</h2>
-                        <h3 class="card-text">{{newConnections}}</h3>
-                    </div>
-                </div>
-            </div>
-            <div class="col-sm-3">
-                <div class="card card1">
-                    <div class="card-body">
-                        <h2 class="card-title">House Registered</h2>
-                        <h3 class="card-text">{{houseRegistered}}</h3>
-                    </div>
+<div class="container">
+    <div class="row">
+        <div class="col-md-3">
+            <div class="card">
+                <div class="card-body">
+                    <p class="card-title">Revenue</p>
+                    <h4 class="card-text">{{revenue|currency:'INR'}}</h4>
+                    <hr>
+                    <small><span style="color: darkgreen; font-weight: 900; font-size: larger;">+22%</span> than
+                        last month</small>
                 </div>
             </div>
         </div>
-        <div class="row">
-            <div class="col">
-                <div class="card">
-                    <div class="card-body">
-                        <h1 class="card-title" style="text-align: center; background: -webkit-linear-gradient(to right, #237A57, #093028);
-                        background: linear-gradient(to right, #237A57, #093028);
-                        color: var(--primary-white);">Revenue By Month</h1>
-                        <div class="row">
+        <div class="col-md-3">
+            <div class="card ">
+                <div class="card-body">
+                    <p class="card-title">Complaints</p>
+                    <h4 class="card-text">{{complaints}}</h4>
+                    <hr>
+                    <small><span style="color: darkred; font-weight: 900; font-size: larger;">-2%</span> than
+                        last month</small>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-3">
+            <div class="card ">
+                <div class="card-body">
+                    <p class="card-title">New Clients</p>
+                    <h4 class="card-text">{{newConnections}}</h4>
+                    <hr>
+                    <small><span style="color: darkgreen; font-weight: 900; font-size: larger;">+2%</span> than
+                        last month</small>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-3">
+            <div class="card ">
+                <div class="card-body">
+                    <p class="card-title">Total Users</p>
+                    <h4 class="card-text">{{houseRegistered}}</h4>
+                    <hr>
+                    <small><span style="color: darkgreen; font-weight: 900; font-size: larger;">+22%</span> than
+                        last month</small>
+
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-6">
+            <div class="card">
+                <div class="card-body">
+                    <h4 class="card-title" style="text-align: center; background: #4b6cb7;
+                        background: -webkit-linear-gradient(to right, #182848, #4b6cb7);
+                        background: linear-gradient(to right, #182848, #4b6cb7);
+                        color: var(--primary-white);">Revenue By Month</h4>
+                    <!-- <div class="row">
                             <div class="col-sm-6">
                                 <div class="card ">
                                     <div class="card-body">
-                                        <h3 class="card-title">Previous Month</h3>
-                                        <h3 class="card-text">{{previousMonthRevenue|currency:'INR'}}</h3>
+                                        <p class="card-title">Previous Month</p>
+                                        <h4 class="card-text">{{previousMonthRevenue|currency:'INR'}}</h4>
                                     </div>
                                 </div>
                             </div>
                             <div class="col-sm-6">
                                 <div class="card ">
                                     <div class="card-body">
-                                        <h3 class="card-title">Current Month</h3>
-                                        <h3 class="card-text">{{currentMonthRevenue|currency:'INR'}}</h3>
+                                        <p class="card-title">Current Month</p>
+                                        <h4 class="card-text">{{currentMonthRevenue|currency:'INR'}}</h4>
                                     </div>
                                 </div>
                             </div>
-                        </div>
-                        <ngx-charts-line-chart [view]="[600,400]" [scheme]="colorScheme" [results]="data1"
-                            [gradient]="gradient" [xAxis]="showXAxis" [yAxis]="showYAxis" [legend]="showLegend"
-                            [showXAxisLabel]="showXAxisLabel" [showYAxisLabel]="showYAxisLabel"
-                            [xAxisLabel]="xAxisLabel" [yAxisLabel]="yAxisLabel" [legendTitle]="legendTitle"
-                            [animations]="true">
-                        </ngx-charts-line-chart>
-                    </div>
-
+                        </div> -->
+                    <!-- previous view [view]="[600,400]" -->
+                    <ngx-charts-line-chart [view]="[500,300]" [scheme]="colorScheme" [results]="data1"
+                        [gradient]="gradient" [xAxis]="showXAxis" [yAxis]="showYAxis" [legend]="showLegend"
+                        [showXAxisLabel]="showXAxisLabel" [showYAxisLabel]="showYAxisLabel" [xAxisLabel]="xAxisLabel"
+                        [yAxisLabel]="yAxisLabel" [legendTitle]="legendTitle" [animations]="true">
+                    </ngx-charts-line-chart>
                 </div>
 
             </div>
 
         </div>
-        <div class="row">
+        <div class="col-md-6">
+            <div class="card">
+                <div class="card-body">
+                    <h4 class="card-title" style="text-align: center; background: #4b6cb7;
+                        background: -webkit-linear-gradient(to right, #182848, #4b6cb7);
+                        background: linear-gradient(to right, #182848, #4b6cb7);
+                        color: var(--primary-white);">Revenue By Location</h4>
+                    <ngx-charts-pie-chart [view]="[500,300]" [scheme]="colorScheme" [results]="data"
+                        [legend]="showLegend" [labels]="true" [animations]="true">
+                    </ngx-charts-pie-chart>
+                    <!-- previous view [view]="[1000,300]" -->
+                </div>
+
+            </div>
+        </div>
+
+    </div>
+    <!-- <div class="row">
             <div class="col">
                 <div class="card">
                     <div class="card-body">
-                        <h1 class="card-title" style="text-align: center; background: -webkit-linear-gradient(to right, #237A57, #093028);
-                        background: linear-gradient(to right, #237A57, #093028);
-                        color: var(--primary-white);">Revenue By Locatiom</h1>
-                        <ngx-charts-pie-chart [view]="[1000,300]" [scheme]="colorScheme" [results]="data"
+                        <h2 class="card-title" style="text-align: center; background: #4b6cb7;
+                        background: -webkit-linear-gradient(to right, #182848, #4b6cb7);
+                        background: linear-gradient(to right, #182848, #4b6cb7);
+                        color: var(--primary-white);">Revenue By Locatiom</h2>
+                        <ngx-charts-pie-chart [view]="[400,300]" [scheme]="colorScheme" [results]="data"
                             [legend]="showLegend" [labels]="true" [animations]="true">
                         </ngx-charts-pie-chart>
                     </div>
@@ -90,60 +117,60 @@
 
             </div>
 
-        </div>
-        <div class="row">
-            <div class="col-sm-8">
-                <div class="card">
-                    <div class="card-body">
-                        <h1 class="card-title" style="text-align: center; background: -webkit-linear-gradient(to right, #237A57, #093028);
-                        background: linear-gradient(to right, #237A57, #093028);
-                        color: var(--primary-white);">Water Outflow & Inflow</h1>
-                        <ngx-charts-line-chart [view]="[600,400]" [scheme]="colorScheme" [results]="data1"
-                            [gradient]="gradient" [xAxis]="showXAxis" [yAxis]="showYAxis" [legend]="showLegend"
-                            [showXAxisLabel]="showXAxisLabel" [showYAxisLabel]="showYAxisLabel"
-                            [xAxisLabel]="xAxisLabel" [yAxisLabel]="yAxisLabel" [legendTitle]="legendTitle"
-                            [animations]="true">
-                        </ngx-charts-line-chart>
-                    </div>
-
-                </div>
-
-            </div>
-            <div class="col-sm-4">
-                <div class="row">
-                    <div class="col">
-                        <div class="card card1">
-                            <div class="card-body">
-                                <h2 class="card-title">Water Outflow</h2>
-                                <h3 class="card-text">{{waterOutflow}}</h3>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="col">
-                        <div class="card card1">
-                            <div class="card-body">
-                                <h2 class="card-title">Water Inflow</h2>
-                                <h3 class="card-text">{{waterInflow}}</h3>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="row">
-                    <div class="col">
-                        <div class="card card1">
-                            <div class="card-body">
-                                <h2 class="card-title">Total Loss</h2>
-                                <h3 class="card-text">{{totalLoss}}</h3>
-                            </div>
-                        </div>
-                    </div>
+        </div> -->
+    <div class="row">
+        <div class="col-md-8">
+            <div class="card">
+                <div class="card-body">
+                    <h4 class="card-title" style="text-align: center; background: #4b6cb7;
+                        background: -webkit-linear-gradient(to right, #182848, #4b6cb7);
+                        background: linear-gradient(to right, #182848, #4b6cb7);
+                        color: var(--primary-white);">Water Outflow & Inflow</h4>
+                    <ngx-charts-line-chart [view]="[500,300]" [scheme]="colorScheme" [results]="data1"
+                        [gradient]="gradient" [xAxis]="showXAxis" [yAxis]="showYAxis" [legend]="showLegend"
+                        [showXAxisLabel]="showXAxisLabel" [showYAxisLabel]="showYAxisLabel" [xAxisLabel]="xAxisLabel"
+                        [yAxisLabel]="yAxisLabel" [legendTitle]="legendTitle" [animations]="true">
+                    </ngx-charts-line-chart>
+                    <!-- previous view [view]="[600,400]"  -->
                 </div>
 
             </div>
 
         </div>
+        <div class="col-md-4">
+            <div class="row">
+                <div class="col">
+                    <div class="card card1">
+                        <div class="card-body">
+                            <p class="card-title">Water Outflow</p>
+                            <h4 class="card-text">{{waterOutflow}}</h4>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col">
+                    <div class="card card1">
+                        <div class="card-body">
+                            <p class="card-title">Water Inflow</p>
+                            <h4 class="card-text">{{waterInflow}}</h4>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col">
+                    <div class="card card1">
+                        <div class="card-body">
+                            <p class="card-title">Total Loss</p>
+                            <h4 class="card-text">{{totalLoss}}</h4>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
     </div>
-</main>
+</div>
