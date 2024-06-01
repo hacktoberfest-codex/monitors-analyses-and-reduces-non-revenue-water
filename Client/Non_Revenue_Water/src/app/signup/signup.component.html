@@ -5,7 +5,7 @@
 <div class="container">
     <div class="row">
         <div class="form-header">
-            <h2>SIGN UP</h2>
+            <h3>SIGN UP</h3>
         </div>
         <div class="form-body">
             <form method="post" #signupform="ngForm" (submit)="onSubmit(signupform)">
@@ -15,11 +15,36 @@
                 </select>
                 <input type="text" placeholder="Full name" name="accountHolderName" required ngModel />
                 <input type="email" placeholder="Email" name="accountEmail" required ngModel />
-                <input type="text" placeholder="Address" name="accountaddress" required ngModel />
-                <input type="text" placeholder="Area" name="accountarea" required ngModel />
-                <input type="text" placeholder="Pincode" name="accountpincode" required ngModel />
-                <input type="password" placeholder="Password" name="accountPassword" required ngModel />
-                <input type="text" placeholder="Mobile number" name="contactNumber" required ngModel />
+                <input type="password" placeholder="Password" name="accountPassword"
+                    pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}"
+                    title="Must contain at least one number and one uppercase and lowercase letter, and at least 8 or more characters"
+                    required ngModel />
+                <input type="text" placeholder="Mobile number" maxlength="10" name="contactNumber" required ngModel />
+                <select name="state" ngModel="Odisha" required>
+                    <option value="Odisha">Odisha</option>
+                    <option value="Andhra Pradesh">Andhra Pradesh</option>
+                    <option value="Maharashtra">Maharashtra</option>
+                    <option value="Assam">Assam</option>
+                    <option value="Karnataka">Karnataka</option>
+                    <option value="West Bengal">West Bengal</option>
+                    <option value="Kerala">Kerala</option>
+                </select>
+                <!-- <input type="text" placeholder="State" name="state" required ngModel /> -->
+                <select name="city" ngModel="Bhubaneswar" required>
+                    <option value="Bhubaneswar">Bhubaneswar</option>
+                    <option value="Amaravati">Amaravati</option>
+                    <option value="Mumbai">Mumbai</option>
+                    <option value="Dispur">Dispur</option>
+                    <option value="Bengaluru">Bengaluru</option>
+                    <option value="Kolkata">Kolkata</option>
+                    <option value="Thiruvananthapuram">Thiruvananthapuram</option>
+                </select>
+                <!-- <input type="text" placeholder="City" name="city" required ngModel /> -->
+                <select name="area" ngModel="Cspur 1" required>
+                    <option value="Cspur 1">Cspur1</option>
+                    <option value="Cspur 2">Cspur2</option>
+                </select>
+                <input type="text" placeholder="Zipcode" min="0" maxlength="6" name="zipcode" required ngModel />
                 <input type="submit" value="Sign up" class="btn btn-success" [disabled]="!signupform.valid">
             </form>
         </div>

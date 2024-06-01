@@ -12,7 +12,6 @@ import { FormsModule } from '@angular/forms';
 import { ToastComponent } from './toast/toast.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { HttpClientModule } from '@angular/common/http';
-import { HeaderComponent } from './header/header.component';
 import { ModalComponent } from './modal/modal.component';
 import { ProfileComponent } from './profile/profile.component';
 import { HomeComponent } from './home/home.component';
@@ -32,6 +31,10 @@ import {MatListModule} from '@angular/material/list';
 import { UserHomeComponent } from './user-home/user-home.component';
 import { WaterUsageComponent } from './water-usage/water-usage.component';
 import { PaybillComponent } from './paybill/paybill.component';
+import { AdminDashboardComponent } from './admin-dashboard/admin-dashboard.component';
+import { AdminSignupComponent } from './admin-signup/admin-signup.component';
+import { AdminLoginComponent } from './admin-login/admin-login.component';
+import { AdminHomeComponent } from './admin-home/admin-home.component';
 
 
 
@@ -45,7 +48,6 @@ import { PaybillComponent } from './paybill/paybill.component';
     SignupComponent,
     ToastComponent,
     DashboardComponent,
-    HeaderComponent,
     ModalComponent,
     ProfileComponent,
     HomeComponent,
@@ -57,6 +59,10 @@ import { PaybillComponent } from './paybill/paybill.component';
     UserHomeComponent,
     WaterUsageComponent,
     PaybillComponent,
+    AdminDashboardComponent,
+    AdminSignupComponent,
+    AdminLoginComponent,
+    AdminHomeComponent,
 
 
   ],

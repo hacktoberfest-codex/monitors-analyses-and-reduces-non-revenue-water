@@ -20,9 +20,9 @@ export class LoginComponent {
         next: res => {
           form.reset();
           const response = res as any;
-          localStorage.setItem("account", response.accountNumber);
+          localStorage.setItem("token", response.token);
 
-          this.router.navigate(["dashboard"])
+          this.router.navigate(["userhome"])
         },
         error: err => {
           this.generateToast("Failure", "Unauthorized access")

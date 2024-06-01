@@ -10,11 +10,16 @@ import { AboutUsComponent } from './about-us/about-us.component';
 import { OurTeamComponent } from './our-team/our-team.component';
 import { HelpFaqComponent } from './help-faq/help-faq.component';
 import { UserHomeComponent } from './user-home/user-home.component';
+import { AdminLoginComponent } from './admin-login/admin-login.component';
+import { AdminSignupComponent } from './admin-signup/admin-signup.component';
+import { AdminHomeComponent } from './admin-home/admin-home.component';
 
 
 const routes: Routes = [
   { path: "login", component: LoginComponent },
+  { path: "adminlogin", component: AdminLoginComponent },
   { path: "signup", component: SignupComponent },
+  { path: "adminsignup", component: AdminSignupComponent },
   { path: "dashboard", component: DashboardComponent },
   { path: "profile", component: ProfileComponent },
   { path: "home", component: HomeComponent },
@@ -22,7 +27,8 @@ const routes: Routes = [
   { path: "about", component: AboutUsComponent },
   { path: "team", component: OurTeamComponent },
   { path: "help", component: HelpFaqComponent },
-  { path: "userhome", component: UserHomeComponent},
+  { path: "userhome", component: UserHomeComponent },
+  { path: "adminhome", component: AdminHomeComponent },
   { path: "", pathMatch: "full", redirectTo: "login" },
   { path: "**", redirectTo: "login" },
 

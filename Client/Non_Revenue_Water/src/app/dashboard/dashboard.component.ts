@@ -51,8 +51,8 @@ export class DashboardComponent {
   showLegend: boolean = true;
   showXAxisLabel: boolean = true;
   showYAxisLabel: boolean = true;
-  xAxisLabel = "pagewise"
-  yAxisLabel = "Users"
+  xAxisLabel = "Month"
+  yAxisLabel = "Revenue"
   legendTitle = "Users"
   cardColor: string = "#232837";
   data1: any = [

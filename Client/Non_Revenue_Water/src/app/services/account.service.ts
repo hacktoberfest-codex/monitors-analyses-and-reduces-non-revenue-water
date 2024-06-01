@@ -1,7 +1,9 @@
 import { Injectable, inject } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { UserAccount } from '../model/user_account';
-export const BASE_URL = 'http://localhost:1200/water/api/v1/accounts';
+import { environment } from 'src/environments/environment.development';
+
+export const BASE_URL = environment.base_url + '/accounts';
 
 @Injectable({
   providedIn: 'root'
@@ -11,9 +13,13 @@ export class AccountService {
   noauth = { headers: { "noauth": "noauth" } };
 
   constructor() { }
-  
+
   createAccount(account: any) {
-    return this.http.post(BASE_URL, account, this.noauth);
+    return this.http.post(BASE_URL + "/register", account, this.noauth);
+  }
+
+  createAccountAdmin(account: any) {
+    return this.http.post(BASE_URL + "/adminregister", account, this.noauth);
   }
 
   loginAccount(account: any) {

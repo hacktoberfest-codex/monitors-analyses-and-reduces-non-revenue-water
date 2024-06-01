@@ -1,0 +1,24 @@
+<header>
+    <app-navbar></app-navbar>
+</header>
+
+<div class="container">
+    <div class="row">
+        <div class="form-header">
+            <h2>ADMIN LOGIN</h2>
+        </div>
+        <div class="form-body">
+            <form method="post" #logininForm="ngForm" (ngSubmit)="onLogin(logininForm)">
+                <input type="text" placeholder="Email" name="accountEmail" required ngModel />
+                <input type="password" placeholder="Password" name="accountPassword" required ngModel />
+                <input type="submit" value="Login" class="btn btn-success" [disabled]="!logininForm.valid">
+            </form>
+        </div>
+        <div class="form-footer">
+            <p>Don't have an account?</p>
+            <a routerLink="/adminsignup">Sign up now</a>
+        </div>
+    </div>
+
+</div>
+<app-toast *ngIf="toastVisible" [heading]="toastHeading" [description]="toastDescription"></app-toast>

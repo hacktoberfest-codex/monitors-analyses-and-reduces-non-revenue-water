@@ -1,0 +1,16 @@
+.card-body {
+    text-align: center;
+  }
+  
+  .card {
+    box-shadow: 5px 5px 5px var(--primary-shadow);
+    background-color: whitesmoke;
+  }
+  
+  .row {
+    margin: 20px;
+  }
+  
+  p {
+    font-weight: bold;
+  }

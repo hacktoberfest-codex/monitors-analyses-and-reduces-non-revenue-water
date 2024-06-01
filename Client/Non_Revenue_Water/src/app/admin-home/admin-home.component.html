@@ -1,0 +1,55 @@
+<mat-toolbar class="mat-elevation-z8">
+    <button mat-icon-button *ngIf="sidenav.mode === 'over'" (click)="sidenav.toggle()">
+        <mat-icon *ngIf="!sidenav.opened">
+            <i class="fa-solid fa-bars"></i>
+        </mat-icon>
+        <mat-icon *ngIf="sidenav.opened">
+            <i class="fa-solid fa-circle-xmark"></i>
+        </mat-icon>
+    </button>
+    Drop By Drop
+</mat-toolbar>
+
+<mat-sidenav-container>
+    <mat-sidenav #sidenav="matSidenav" class="mat-elevation-z8">
+        <img class="avatar mat-elevation-z8" src="../../assets/som.jpg" />
+
+        <h4 class="name">Soumendra</h4>
+        <p class="designation">Admin</p>
+
+        <mat-divider></mat-divider>
+        <button mat-button class="menu-button" (click)="tabChange('dashboard')">
+            <!-- <mat-icon><i class="fa-solid fa-house"></i></mat-icon> -->
+            <i class="fas fa-tachometer-alt"></i> Dashboard
+        </button>
+        <button mat-button class="menu-button" (click)="tabChange('complaint')">
+            <!-- <mat-icon>info</mat-icon> -->
+            <i class="fa-solid fa-comment"></i> Complaints
+        </button>
+        <button mat-button class="menu-button" (click)="tabChange('profile')">
+            <!-- <mat-icon>person</mat-icon> -->
+            <i class="fas fa-user"></i> Profile
+        </button>
+        <button mat-button class="menu-button" (click)="tabChange('contribute')">
+            <!-- <mat-icon>info</mat-icon> -->
+            <i class="fa-solid fa-bell"></i> Contribute
+        </button>
+        <button mat-button class="menu-button" (click)="tabChange('about')">
+            <!-- <mat-icon>info</mat-icon> -->
+            <i class="fa-solid fa-circle-info"></i> About
+        </button>
+        <button mat-button class="menu-button" (click)="onLogout()">
+            <!-- <mat-icon>help</mat-icon> -->
+            <i class="fas fa-right-from-bracket"></i> Logout
+        </button>
+
+
+
+    </mat-sidenav>
+    <mat-sidenav-content>
+        <div class="content mat-elevation-z8">
+            <app-admin-dashboard *ngIf="page === 'dashboard'"></app-admin-dashboard>
+            <app-profile *ngIf="page === 'profile'"></app-profile>
+        </div>
+    </mat-sidenav-content>
+</mat-sidenav-container>

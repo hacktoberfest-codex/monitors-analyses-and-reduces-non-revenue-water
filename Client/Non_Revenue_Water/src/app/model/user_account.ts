@@ -8,6 +8,7 @@ export interface UserAccount {
     accountType: string
     city: string
     state: string
+    area: String
     country: string
     zipcode: string
 }

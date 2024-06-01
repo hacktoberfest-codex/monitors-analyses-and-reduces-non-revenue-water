@@ -10,7 +10,7 @@ export class UserHomeComponent {
   router = inject(Router);
   onLogout() {
     localStorage.removeItem("account");
-    this.router.navigateByUrl("/signin")
+    this.router.navigateByUrl("/signup")
   }
   page: any;
 

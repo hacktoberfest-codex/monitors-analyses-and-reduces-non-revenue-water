@@ -12,6 +12,7 @@ export class SignupComponent {
   toastHeading = ""; toastDescription = ""; toastVisible = false;
   onSubmit(form: NgForm) {
     if (form.valid) {
+      // console.log(form);
       this.accountService.createAccount(form.value)
         .subscribe({
           next: res => {
