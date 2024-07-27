@@ -15,7 +15,7 @@ import { AdminSignupComponent } from './admin-signup/admin-signup.component';
 import { AdminHomeComponent } from './admin-home/admin-home.component';
 
 
-const routes: Routes = [
+export const routes: Routes = [
   { path: "login", component: LoginComponent },
   { path: "adminlogin", component: AdminLoginComponent },
   { path: "signup", component: SignupComponent },

@@ -1,0 +1,73 @@
+/* src/app/contribution-view/contribution-view.component.css */
+
+.contribution-view-container {
+    /* max-width: 800px; */
+    margin: 2em auto;
+    padding: 1em;
+    background: #fff;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+}
+
+.contribution-header {
+    text-align: center;
+    margin-bottom: 1em;
+}
+
+h1 {
+    font-size: 1.5em;
+    margin: 0.5em 0;
+    background: #4b6cb7;
+    background: -webkit-linear-gradient(to right, #182848, #4b6cb7);
+    background: linear-gradient(to right, #182848, #4b6cb7);
+    color: var(--primary-white);
+    border-radius: 8px;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 1em;
+}
+
+th,
+td {
+    border: 1px solid #ddd;
+    padding: 8px;
+    text-align: left;
+}
+
+th {
+    background-color: #f2f2f2;
+}
+
+.detail-group {
+    margin-bottom: 0.5em;
+}
+
+label {
+    font-weight: bold;
+}
+
+.detail-group span {
+    display: block;
+    margin-top: 0.5em;
+}
+
+.detail-group a {
+    color: #007BFF;
+    text-decoration: none;
+}
+
+.detail-group a:hover {
+    text-decoration: underline;
+}
+
+.contribution-footer {
+    text-align: center;
+    padding: 1em;
+    background: #007BFF;
+    color: white;
+    margin-top: 1em;
+    border-radius: 0 0 8px 8px;
+}

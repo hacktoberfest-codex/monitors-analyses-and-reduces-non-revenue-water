@@ -7,8 +7,12 @@ nav {
 
 ul>li>a:hover,
 .active {
-    background-color: white;
+    /* background-color: white; */
 
+    background: -webkit-linear-gradient(to right, #237A57, #093028);
+    background: linear-gradient(to right, #237A57, #093028);
+    border-radius: 10px;
+    color: white;
 
 }
 

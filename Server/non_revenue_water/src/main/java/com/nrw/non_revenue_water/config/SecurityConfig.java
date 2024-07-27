@@ -50,10 +50,10 @@ public class SecurityConfig {
         http.authorizeHttpRequests(request -> {
             request
                     .requestMatchers("/api/v1/accounts/register", "/api/v1/accounts/create",
-                            "/api/v1/accounts/adminregister")
-                    .permitAll()
-                    .requestMatchers("/api/v1/accounts/login").permitAll()
+                            "/api/v1/accounts/adminregister").permitAll()
+                    .requestMatchers("/api/v1/accounts/login", "/api/v1/accounts/adminlogin").permitAll()
                     .requestMatchers("/api/v1/accounts/*/image").permitAll()
+                    .requestMatchers("/api/v1/accounts/registercomplaint").permitAll()
                     .requestMatchers("/swagger-ui.html", "/swagger-ui/**", "/v3/api-docs/**").permitAll()
                     .anyRequest().authenticated();
         });

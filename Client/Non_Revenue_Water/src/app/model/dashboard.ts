@@ -1,7 +1,13 @@
+import { RevenueByLocation, Transaction } from "./transaction"
+
 export interface Dashboard {
-    totalRevenue: number
+    userName: String
+    accountBalance: number
     numberOfComplaints: number
-    numberOfNewClients: number
+    todaysRevenue: number
     totalUsers: number
+    transactions: Transaction[]
+    revenueByLocations: RevenueByLocation[]
+    waterFlows:Transaction[]
 
 }
