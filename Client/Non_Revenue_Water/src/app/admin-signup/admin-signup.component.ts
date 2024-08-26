@@ -1,6 +1,7 @@
 import { Component, inject } from '@angular/core';
 import { NgForm } from '@angular/forms';
 import { AccountService } from '../services/account.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-admin-signup',
@@ -10,6 +11,7 @@ import { AccountService } from '../services/account.service';
 export class AdminSignupComponent {
   accountService = inject(AccountService);
   toastHeading = ""; toastDescription = ""; toastVisible = false;
+  router = inject(Router);
   onSubmit(form: NgForm) {
     if (form.valid) {
       // console.log(form);
@@ -20,6 +22,7 @@ export class AdminSignupComponent {
 
             this.generateToast("Success", "Account created");
             form.reset();
+            this.router.navigate(["adminlogin"])
           },
           error: err => {
             console.log(err);

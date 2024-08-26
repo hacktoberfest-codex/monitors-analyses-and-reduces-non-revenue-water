@@ -49,7 +49,10 @@
     <mat-sidenav-content>
         <div class="content mat-elevation-z8">
             <app-admin-dashboard *ngIf="page === 'dashboard'"></app-admin-dashboard>
+            <app-complaint-view *ngIf="page === 'complaint'"></app-complaint-view>
             <app-profile *ngIf="page === 'profile'"></app-profile>
+            <app-contribute-view *ngIf="page === 'contribute'"></app-contribute-view>
+            <app-about *ngIf="page === 'about'"></app-about>
         </div>
     </mat-sidenav-content>
 </mat-sidenav-container>

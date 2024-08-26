@@ -57,30 +57,115 @@ export class DashboardComponent {
   cardColor: string = "#232837";
   data1: any = [
     {
-      "name": "Karthikeyan",
+      "name": "Outflow",
       "series": [
         {
-          "name": "2016",
+          "name": "Jan",
           "value": "15000"
         },
         {
-          "name": "2017",
+          "name": "Feb",
           "value": "12000"
         },
         {
-          "name": "2018",
+          "name": "Mar",
           "value": "25000"
         },
         {
-          "name": "2019",
+          "name": "Apr",
           "value": "1000"
         },
         {
-          "name": "2020",
+          "name": "May",
+          "value": "30000"
+        },
+        {
+          "name": "June",
+          "value": "40000"
+        },
+        {
+          "name": "July",
+          "value": "35000"
+        },
+        {
+          "name": "Aug",
+          "value": "10000"
+        },
+        {
+          "name": "Sept",
+          "value": "39000"
+        },
+        {
+          "name": "Oct",
+          "value": "50000"
+        },
+        {
+          "name": "Nov",
+          "value": "20000"
+        },
+        {
+          "name": "Dec",
+          "value": "34000"
+        }
+      ],
+      
+    },
+    {
+      "name": "Inflow",
+      "series": [
+        {
+          "name": "Jan",
+          "value": "12000"
+        },
+        {
+          "name": "Feb",
+          "value": "9000"
+        },
+        {
+          "name": "Mar",
+          "value": "19000"
+        },
+        {
+          "name": "Apr",
+          "value": "10"
+        },
+        {
+          "name": "May",
+          "value": "21000"
+        },
+        {
+          "name": "June",
+          "value": "30000"
+        },
+        {
+          "name": "July",
+          "value": "34000"
+        },
+        {
+          "name": "Aug",
+          "value": "8000"
+        },
+        {
+          "name": "Sept",
+          "value": "35000"
+        },
+        {
+          "name": "Oct",
+          "value": "45000"
+        },
+        {
+          "name": "Nov",
+          "value": "15000"
+        },
+        {
+          "name": "Dec",
           "value": "30000"
         }
       ],
+      
     },
+    
+    
   ]
 
   ngOnInit(): void {

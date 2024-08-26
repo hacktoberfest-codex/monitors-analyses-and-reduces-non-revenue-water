@@ -11,7 +11,6 @@ import com.nrw.non_revenue_water.model.Account;
 
 import jakarta.websocket.server.PathParam;
 
-
 public interface AccountRepository extends JpaRepository<Account, Integer> {
     Optional<Account> findByAccountNumber(long accountNumber);
 
@@ -30,6 +29,4 @@ public interface AccountRepository extends JpaRepository<Account, Integer> {
     // corresponding JPQL or SQL query parameter name. Refer above findByEmail
     // method
 
-    
-    
 }

@@ -37,7 +37,7 @@ public class JWTFilter extends OncePerRequestFilter {
                                             // then the getRequestURI will give this /nrw/api/v1/register
 
         var passedPaths = List.of("login", "adminlogin", "register", "adminsignup", "create", "swagger", "api-doc",
-                "/banking/api/v1/accounts/\\d+/image");
+                "/nrw/api/v1/accounts/\\d+/image");
 
         for (var passedPath : passedPaths) {
             if (path.contains(passedPath) || path.matches(passedPath)) {

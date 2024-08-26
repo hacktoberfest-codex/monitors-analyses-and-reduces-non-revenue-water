@@ -9,8 +9,8 @@ import { Router } from '@angular/router';
 export class AdminHomeComponent {
   router = inject(Router);
   onLogout() {
-    localStorage.removeItem("account");
-    this.router.navigateByUrl("/signup")
+    localStorage.removeItem("token");
+    this.router.navigateByUrl("/adminlogin")
   }
   page: any;
 

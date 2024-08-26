@@ -1,172 +1,121 @@
-<!-- <main>
-    
-    <section *ngIf="account">
-        <div class="profile-container">
-            <div>
-                <img #profilePic [src]="profilePicture" alt="no img" role="button"
-                    title="edit" (click)="modalVisible = !modalVisible" 
-                    (error)="alternativeImage(profilePic)" />
-
-                <strong>{{account.accountHolderName}}</strong>
-                <p><i class="fa-solid fa-file-invoice"></i> {{account.accountNumber}}</p>
-                <p><i class="fa fa-wallet"></i> {{ account.accountBalance| currency : "INR" }}</p>
-                <p><i class="fa fa-phone"></i> {{account.contactNumber}}</p>
-                <p><i class="fa fa-envelope"></i> {{account.accountEmail}}</p>
-            </div>
-            <div>
-                <h2>About</h2>
-                <p>{{account.aboutCustomer}}</p>
-            </div>
-        </div>
-        <div class="form-container">
-            <form method="post" (submit)="onUpdate()">
-                <h2>Personal Detalis</h2>
-                <div class="personal-details">
-                    <div class="form-group">
-                        <label for="name">name</label>
-                        <input type="text" placeholder="Smruti" name="accountHolderName"
-                            [(ngModel)]="account.accountHolderName" required />
-                    </div>
-                    <div class="form-group">
-                        <label for="name">Mobile number</label>
-                        <input type="text" placeholder="9087654321" name="contactNumber"
-                            [(ngModel)]="account.contactNumber" required />
-                    </div>
-                    <div class="form-group">
-                        <label for="name">Account type</label>
-                        <select name="accountType" [(ngModel)]="account.accountType">
-                            <option value="CURRENT">CURRENT</option>
-                            <option value="SAVINGS">SAVINGS</option>
-                        </select>
-                    </div>
-                    <div class="form-group">
-                        <label for="name">About customer</label>
-                        <textarea name="aboutCustomer" cols="30" rows="3" placeholder="Loyal customer"
-                            [(ngModel)]="account.aboutCustomer" required></textarea>
-                    </div>
-                </div>
-                <h2>Address</h2>
-                <div class="address-details">
-                    <div class="form-group">
-                        <label for="name">City</label>
-                        <input type="text" placeholder="bbsr" name="city" [(ngModel)]="account.city" required />
-                    </div>
-                    <div class="form-group">
-                        <label for="name">State</label>
-                        <input type="text" placeholder="odisha" name="state" [(ngModel)]="account.state" required />
-                    </div>
-                    <div class="form-group">
-                        <label for="name">Country</label>
-                        <input type="text" placeholder="india" name="country" [(ngModel)]="account.country" required />
-                    </div>
-                    <div class="form-group">
-                        <label for="name">Zip code</label>
-                        <input type="text" placeholder="123456" name="zipcode" [(ngModel)]="account.zipcode" required />
-                    </div>
-                </div>
-                <div class="button-group">
-                    <button type="submit">Update</button>
-                </div>
-            </form>
-        </div>
-    </section>
-</main>
-
-
-<app-modal *ngIf="modalVisible" [header]="'Profile picture'">
-    <form method="post" #imageForm (submit)="onImageSubmit(imageForm)">
-        <input type="file" (change)="onUpload($event)" />
-        <div class="button-group">
-            <button type="submit">Upload</button>
-            <button type="button" (click)="modalVisible = !modalVisible">
-                Cancel
-            </button>
-        </div>
-    </form>
-</app-modal>
-
-<app-toast *ngIf="toastVisible" [heading]="toastHeading" [description]="toastDescription">
-</app-toast> -->
 <div class="container">
     <div class="row">
         <div class="col-md-8">
             <div class="card">
                 <div class="header">
-                    <h4 class="title">Edit Profile</h4>
+                    <h2 style="text-align: center; background: #4b6cb7;
+                    background: -webkit-linear-gradient(to right, #182848, #4b6cb7);
+                    background: linear-gradient(to right, #182848, #4b6cb7);
+                    color: var(--primary-white); border-radius: 8px;
+                    font-size: 2rem;">Personal Detalis</h2>
                 </div>
                 <div class="content">
-                    <form novalidate="" class="ng-untouched ng-pristine ng-valid">
-                        <div class="row">
-                            <div class="col-md-5">
-                                <div class="form-group"><label>Company (disabled)</label><input class="form-control"
-                                        disabled="" placeholder="Company" type="text" value="Creative Code Inc."></div>
-                            </div>
-                            <div class="col-md-3">
-                                <div class="form-group"><label>Username</label><input class="form-control"
-                                        placeholder="Username" type="text" value="michael23"></div>
-                            </div>
-                            <div class="col-md-4">
-                                <div class="form-group"><label for="exampleInputEmail1">Email address</label><input
-                                        class="form-control" placeholder="Email" type="email"></div>
-                            </div>
-                        </div>
+                    <form method="post" (submit)="onUpdate()">
                         <div class="row">
                             <div class="col-md-6">
-                                <div class="form-group"><label>First Name</label><input class="form-control"
-                                        placeholder="Company" type="text" value="Mike"></div>
-                            </div>
-                            <div class="col-md-6">
-                                <div class="form-group"><label>Last Name</label><input class="form-control"
-                                        placeholder="Last Name" type="text" value="Andrew"></div>
-                            </div>
-                        </div>
-                        <div class="row">
-                            <div class="col-md-12">
-                                <div class="form-group"><label>Address</label><input class="form-control"
-                                        placeholder="Home Address" type="text"
-                                        value="Bld Mihail Kogalniceanu, nr. 8 Bl 1, Sc 1, Ap 09"></div>
-                            </div>
-                        </div>
-                        <div class="row">
-                            <div class="col-md-4">
-                                <div class="form-group"><label>City</label><input class="form-control"
-                                        placeholder="City" type="text" value="Mike"></div>
-                            </div>
-                            <div class="col-md-4">
-                                <div class="form-group"><label>Country</label><input class="form-control"
-                                        placeholder="Country" type="text" value="Andrew"></div>
-                            </div>
-                            <div class="col-md-4">
-                                <div class="form-group"><label>Postal Code</label><input class="form-control"
-                                        placeholder="ZIP Code" type="number"></div>
-                            </div>
-                        </div>
-                        <div class="row">
-                            <div class="col-md-12">
-                                <div class="form-group"><label>About Me</label><textarea class="form-control"
-                                        placeholder="Here can be your description" rows="5"
-                                        value="Mike">Lamborghini Mercy, Your chick she so thirsty, I'm in that two seat Lambo.</textarea>
+                                <div class="form-group">
+                                    <label for="name"><b>Name</b></label>
+                                    <input class="form-control" disabled name="accountHolderName"
+                                        placeholder="Soumendra" type="text" [(ngModel)]="account.accountHolderName">
                                 </div>
                             </div>
-                        </div><button class="btn btn-info btn-fill pull-right" type="submit">Update Profile</button>
-                        <div class="clearfix"></div>
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label for="email"><b>Email</b></label>
+                                    <input class="form-control" disabled placeholder="example@gmail.com" type="email"
+                                        name="accountEmail" [(ngModel)]="account.accountEmail">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label for="name"><b>Account type</b></label>
+                                    <input class="form-control" type="text" disabled name="accountType"
+                                        [(ngModel)]="account.accountType">
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label><b>Mobile number</b></label>
+                                    <input class="form-control" placeholder="9087654321" maxlength="10" minlength="0"
+                                        type="text" name="contactNumber" [(ngModel)]="account.contactNumber" required>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-4">
+                                <div class="form-group">
+                                    <label><b>State</b></label>
+                                    <input class="form-control" placeholder="Odisha" type="text" name="state"
+                                        [(ngModel)]="account.state" required>
+                                </div>
+                            </div>
+                            <div class="col-md-4">
+                                <div class="form-group">
+                                    <label><b>City</b></label>
+                                    <input class="form-control" placeholder="Bhubaneswar" type="text" name="city"
+                                        [(ngModel)]="account.city" required>
+                                </div>
+                            </div>
+                            <div class="col-md-4">
+                                <div class="form-group">
+                                    <label><b>Pin Code</b></label>
+                                    <input class="form-control" placeholder="751016" type="text" maxlength="6"
+                                        name="zipcode" [(ngModel)]="account.zipcode" required>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-12">
+                                <div class="form-group">
+                                    <label for="name"><b>About Customer</b></label>
+                                    <textarea class="form-control" name="aboutCustomer" cols="30" rows="3"
+                                        placeholder="Loyal customer" [(ngModel)]="account.aboutCustomer"
+                                        required></textarea>
+                                </div>
+                            </div>
+                        </div>
+                        <input style="margin-left: 35%;" class="btn btn-primary" type="submit" value="Update">
+
                     </form>
                 </div>
             </div>
         </div>
         <div class="col-md-4">
             <div class="card card-user">
-                <div class="image"><img style="height: 110px; width: 100%;" alt="..." src="../../assets/dp.jpg"></div>
-                <div class="content1">
-                    <div class="author"><a href="#"><img alt="..." class="avatar border-gray"
-                                src="../../assets/som.jpg"></a>
-                        <h4 class="title">Soumendra Sahoo<br><small>soumendra24</small></h4>
+                <div class="profile-container">
+                    <div>
+                        <img #profilePic [src]="profilePicture" alt="no img" role="button" title="edit"
+                            (click)="modalVisible = !modalVisible" (error)="alternativeImage(profilePic)" />
+
+                        <strong>{{account.accountHolderName}}</strong>
+                        <p><i class="fa-solid fa-file-invoice"></i> {{account.accountNumber}}</p>
+                        <p><i class="fa fa-wallet"></i> {{ account.accountBalance| currency : "INR" }}</p>
+                        <p><i class="fa fa-phone"></i> {{account.contactNumber}}</p>
+                        <p><i class="fa fa-envelope"></i> {{account.accountEmail}}</p>
                     </div>
-                    <p class="description text-center"> "Lamborghini Mercy <br> Your chick she so thirsty <br> I'm in
-                        that two seat Lambo" </p>
+                    <div>
+                        <h5>About</h5>
+                        <p>{{account.aboutCustomer}}</p>
+                    </div>
                 </div>
-               
+
             </div>
         </div>
     </div>
+    
 </div>
+<app-modal *ngIf="modalVisible" [header]="'Profile picture'">
+    <form method="post" #imageForm (submit)="onImageSubmit(imageForm)">
+        <input type="file" (change)="onUpload($event)" />
+        <div class="button-group">
+            <button type="submit" class="btn btn-success">Upload</button>
+            <button type="button" class="btn btn-danger" (click)="modalVisible = !modalVisible">
+                Cancel
+            </button>
+        </div>
+    </form>
+</app-modal>
+<app-toast *ngIf="toastVisible" [heading]="toastHeading" [description]="toastDescription">
+</app-toast>

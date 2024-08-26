@@ -1,5 +1,6 @@
 header {
     box-shadow: 5px 5px 5px var(--primary-shadow);
+    
 }
 
 
@@ -36,7 +37,7 @@ header {
 
 /* Reseting */
 * {
-    margin: 0;
+    /* margin: 0; */
     padding: 0;
     box-sizing: border-box;
     font-family: 'Poppins', sans-serif;

@@ -1,6 +1,9 @@
-import { Component,inject } from '@angular/core';
+import { Component, OnInit, inject } from '@angular/core';
 import { AccountService, BASE_URL } from '../services/account.service';
 import { UserAccount } from '../model/user_account';
+// import { HttpClient } from '@angular/common/http';
+
+
 
 const DEFAULT_PROFILE = "../../assets/images.png";
 @Component({
@@ -8,14 +11,15 @@ const DEFAULT_PROFILE = "../../assets/images.png";
   templateUrl: './profile.component.html',
   styleUrls: ['./profile.component.css']
 })
-export class ProfileComponent {
-  
+export class ProfileComponent implements OnInit {
+
   profilePicture = DEFAULT_PROFILE;
   base_url = BASE_URL;
+  // http = inject(HttpClient);
   accountService = inject(AccountService);
   modalVisible = false;
   toastHeading = ""; toastDescription = ""; toastVisible = false;
-  account!: UserAccount;  file!: File;
+  account!: UserAccount; file!: File;
 
   ngOnInit(): void {
     this.accountService.getCurrentAccount().subscribe({
@@ -35,7 +39,8 @@ export class ProfileComponent {
   setImage() {
     const date = new Date();
     this.profilePicture = BASE_URL + "/" + this.account.accountNumber +
-    "/image?r=" + date.getTime();
+      "/image?r=" + date.getTime();
+    console.log(this.profilePicture);
   }
 
   alternativeImage(img: HTMLImageElement) {
@@ -57,7 +62,7 @@ export class ProfileComponent {
       },
       complete: () => {
         form.reset();
-        this.modalVisible = false;``
+        this.modalVisible = false; ``
       }
     }
 
@@ -81,6 +86,8 @@ export class ProfileComponent {
 
   onUpload(event: any) {
     this.file = event.target.files.item(0);
+    console.log(this.file);
+
   }
 
   generateToast(heading: string, description: string) {
@@ -93,4 +100,5 @@ export class ProfileComponent {
     }, 5000);
 
   }
+
 }

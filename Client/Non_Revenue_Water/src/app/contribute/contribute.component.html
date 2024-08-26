@@ -1,0 +1,85 @@
+<!-- contribute.component.html
+<div class="contribute-container">
+    <div class="contribute-header">
+        <h1>Contribute to Non-Revenue Water Management</h1>
+        <p>Your contribution helps us in managing and reducing non-revenue water.</p>
+    </div>
+    
+    <div class="contribute-form">
+        <h2>Submit Your Contribution</h2>
+        <form (ngSubmit)="submitContribution()">
+            <label for="name">Name:</label>
+            <input type="text" id="name" [(ngModel)]="contribution.name" name="name" required>
+            
+            <label for="email">Email:</label>
+            <input type="email" id="email" [(ngModel)]="contribution.email" name="email" required>
+            
+            <label for="contributionType">Type of Contribution:</label>
+            <select id="contributionType" [(ngModel)]="contribution.type" name="type" required>
+                <option value="Information">Information</option>
+                <option value="Issue Report">Issue Report</option>
+                <option value="Suggestion">Suggestion</option>
+            </select>
+
+            <label for="description">Description:</label>
+            <textarea id="description" [(ngModel)]="contribution.description" name="description" rows="5" required></textarea>
+            
+            <button type="submit">Submit Contribution</button>
+        </form>
+    </div>
+
+    <div class="contribute-footer">
+        &copy; 2024 Your Company Name. All rights reserved.
+    </div>
+</div> -->
+
+
+
+<!-- contribute.component.html -->
+<div class="contribute-container">
+    <div class="contribute-header">
+        <h1>Contribute to Non-Revenue Water Management</h1>
+        <p>Your contribution helps us manage and reduce non-revenue water effectively.</p>
+    </div>
+    
+    <div class="contribute-form">
+        <!-- <h2>Submit Your Contribution</h2> -->
+        <form (ngSubmit)="submitContribution()">
+            <div class="form-group">
+                <label for="name"><b>Name:</b></label>
+                <input type="text" id="name" [(ngModel)]="contribution.name" name="name" required>
+            </div>
+            
+            <div class="form-group">
+                <label for="email"><b>Email:</b></label>
+                <input type="email" id="email" [(ngModel)]="contribution.email" name="email" required>
+            </div>
+            
+            <div class="form-group">
+                <label for="contributionType"><b>Type of Contribution:</b></label>
+                <select id="contributionType" [(ngModel)]="contribution.type" name="type" required>
+                    <option value="Information">Information</option>
+                    <option value="Issue Report">Issue Report</option>
+                    <option value="Suggestion">Suggestion</option>
+                </select>
+            </div>
+            
+            <div class="form-group">
+                <label for="description"><b>Description:</b></label>
+                <textarea id="description" [(ngModel)]="contribution.description" name="description" rows="5" required></textarea>
+            </div>
+            
+            <div class="form-group">
+                <label for="attachment"><b>Attachment:</b></label>
+                <input type="file" id="attachment" (change)="onFileSelected($event)">
+            </div>
+            
+            <button type="submit">Submit Contribution</button>
+        </form>
+    </div>
+    
+    <!-- <div class="contribute-footer">
+        &copy; 2024 Your Company Name. All rights reserved.
+    </div> -->
+</div>
+

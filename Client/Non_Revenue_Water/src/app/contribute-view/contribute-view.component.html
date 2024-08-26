@@ -1,0 +1,38 @@
+<!-- src/app/contribution-view/contribution-view.component.html -->
+<div class="contribution-view-container">
+    <div class="contribution-header">
+        <h1>Submitted Contribution Details</h1>
+    </div>
+    
+    <div class="contribution-details">
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>Name</th>
+                    <th>Email</th>
+                    <th>Type of Contribution</th>
+                    <th>Description</th>
+                    <th>Attachment</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let contribution of contributions">
+                    <td>{{ contribution.name }}</td>
+                    <td>{{ contribution.email }}</td>
+                    <td>{{ contribution.type }}</td>
+                    <td>{{ contribution.description }}</td>
+                    <td>
+                        <span *ngIf="contribution.attachment">
+                            <a href="{{ contribution.attachment }}" target="_blank">View Attachment</a>
+                        </span>
+                        <span *ngIf="!contribution.attachment">No attachment</span>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    
+    <!-- <div class="contribution-footer">
+        &copy; 2024 Your Company Name. All rights reserved.
+    </div> -->
+</div>

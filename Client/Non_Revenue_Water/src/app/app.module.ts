@@ -2,16 +2,16 @@ import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
-import { AppRoutingModule } from './app-routing.module';
+import { AppRoutingModule, routes } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { LoginComponent } from './login/login.component';
 import { SignupComponent } from './signup/signup.component';
-import { RouterLink } from '@angular/router';
+import { RouterLink, provideRouter } from '@angular/router';
 import { RouterLinkActive } from '@angular/router';
 import { FormsModule } from '@angular/forms';
 import { ToastComponent } from './toast/toast.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
-import { HttpClientModule } from '@angular/common/http';
+import { HttpClientModule, provideHttpClient, withInterceptors } from '@angular/common/http';
 import { ModalComponent } from './modal/modal.component';
 import { ProfileComponent } from './profile/profile.component';
 import { HomeComponent } from './home/home.component';
@@ -35,11 +35,12 @@ import { AdminDashboardComponent } from './admin-dashboard/admin-dashboard.compo
 import { AdminSignupComponent } from './admin-signup/admin-signup.component';
 import { AdminLoginComponent } from './admin-login/admin-login.component';
 import { AdminHomeComponent } from './admin-home/admin-home.component';
-
-
-
-
-
+import { requestInterceptor } from './interceptor/request.interceptor';
+import { ComplaintComponent } from './complaint/complaint.component';
+import { AboutComponent } from './about/about.component';
+import { ComplaintViewComponent } from './complaint-view/complaint-view.component';
+import { ContributeComponent } from './contribute/contribute.component';
+import { ContributeViewComponent } from './contribute-view/contribute-view.component';
 
 @NgModule({
   declarations: [
@@ -63,8 +64,12 @@ import { AdminHomeComponent } from './admin-home/admin-home.component';
     AdminSignupComponent,
     AdminLoginComponent,
     AdminHomeComponent,
-
-
+    ComplaintComponent,
+    AboutComponent,
+    ComplaintViewComponent,
+    ContributeComponent,
+    ContributeViewComponent,
+    
   ],
   imports: [
     BrowserModule,
@@ -80,10 +85,11 @@ import { AdminHomeComponent } from './admin-home/admin-home.component';
     MatButtonModule,
     MatIconModule,
     MatDividerModule,
-    MatListModule
+    MatListModule,
     
   ],
-  providers: [],
+  providers: [provideRouter(routes),
+    provideHttpClient(withInterceptors([requestInterceptor]))],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

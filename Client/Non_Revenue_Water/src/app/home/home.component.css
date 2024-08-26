@@ -2,6 +2,8 @@ header {
     background-image: url(../../assets/final_bg.jpg);
     background-size: cover;
     /* height: 44rem; */
+    position: fixed;
+    width: 100%;
 }
 
 .my-auto {

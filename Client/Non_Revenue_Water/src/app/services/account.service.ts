@@ -2,6 +2,7 @@ import { Injectable, inject } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { UserAccount } from '../model/user_account';
 import { environment } from 'src/environments/environment.development';
+import { Complaint } from '../model/complaint';
 
 export const BASE_URL = environment.base_url + '/accounts';
 
@@ -24,6 +25,22 @@ export class AccountService {
 
   loginAccount(account: any) {
     return this.http.post(BASE_URL + "/login", account, this.noauth);
+  }
+
+  registerComplaint(complaint: Complaint) {
+    return this.http.post(BASE_URL + "/registercomplaint", complaint)
+  }
+
+  getComplaintStatus() {
+    return this.http.get(BASE_URL + "/complaintstatus")
+  }
+
+  getAllComplaints() {
+    return this.http.get<Complaint>(BASE_URL + "/complaint")
+  }
+
+  updateComplaint(complaint: Complaint) {
+    return this.http.put<Complaint>(BASE_URL + "/updatecomplaint", complaint)
   }
 
   depositBalance(balance: any) {
@@ -52,5 +69,11 @@ export class AccountService {
     const formData = new FormData();
     formData.append("file", file);
     return this.http.post<UserAccount>(BASE_URL + "/image", formData);
+  }
+
+  setImage(account:UserAccount) {
+    const date = new Date();
+    return this.http.get(BASE_URL + "/" + account.accountNumber +
+      "/image?r=" + date.getTime())
   }
 }

@@ -1,0 +1,41 @@
+<div class="container">
+    <h1>Complaint Management</h1>
+    <table>
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Complaint Name</th>
+                <th>Complaint Email</th>
+                <th>Complaint Description</th>
+                <th>Status</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let complaint of complaints">
+                <td>{{ complaint.accountId }}</td>
+                <td>{{ complaint.accountHolderName }}</td>
+                <td>{{ complaint.accountEmail }}</td>
+                <td>{{ complaint.complaintDescription }}</td>
+                <td>{{ complaint.complaintStatus }}</td>
+                <td>
+                    <button (click)="editComplaint(complaint)">Edit</button>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+
+    <div *ngIf="selectedComplaint" class="form-container">
+        <h2>Edit Complaint</h2>
+        <form (ngSubmit)="updateComplaint()">
+            <label for="complaintStatus">Status:</label>
+            <select id="complaintStatus" [(ngModel)]="selectedComplaint.complaintStatus" name="complaintStatus" required>
+                <option value="PENDING">PENDING</option>
+                <option value="INPROGRESS">INPROGRESS</option>
+                <option value="RESOLVED">RESOLVED</option>
+            </select>
+            <button type="submit">Update</button>
+        </form>
+    </div>
+</div>
+<app-toast *ngIf="toastVisible" [heading]="toastHeading" [description]="toastDescription"></app-toast>
