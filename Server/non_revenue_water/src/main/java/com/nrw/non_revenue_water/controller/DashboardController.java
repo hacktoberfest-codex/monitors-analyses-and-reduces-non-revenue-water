@@ -11,6 +11,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 import com.nrw.non_revenue_water.dto.AdminDashboardDTO;
 import com.nrw.non_revenue_water.dto.TransactionDTO;
+import com.nrw.non_revenue_water.dto.UserDashboardDTO;
 import com.nrw.non_revenue_water.mapper.TransactionMapper;
 import com.nrw.non_revenue_water.service.IAccountService;
 // import com.nrw.non_revenue_water.service.ITransactionService;
@@ -36,7 +37,7 @@ public class DashboardController {
         var accountBalance = result.get().getAccountBalance();
         var numberOfComplaints = result.get().getNumberOfComplaints();
         var totalUsers = accountService.countRecord() - 1;
-        var todaysRevenue = 0;
+        var todaysRevenue = accountService.getAdminTodaysRevenue();
         var name = result.get().getAccountHolderName();
 
         // Revenue By Month
@@ -67,6 +68,15 @@ public class DashboardController {
         return new AdminDashboardDTO(name, accountBalance, numberOfComplaints,
                 todaysRevenue, totalUsers, revenueMonth, revenueLocation, waterFlow);
 
+    }
+
+    // User Dashboard API
+    @GetMapping("/user")
+    public UserDashboardDTO userDashboardDetails(@RequestAttribute long accountNumber) {
+        var result = accountService.getAccount(accountNumber);
+        var totalUsers = accountService.countRecord();
+        return new UserDashboardDTO(result.getAccountHolderName(), result.getAccountBalance(),
+                result.getNumberOfComplaints(), totalUsers);
     }
 
 }

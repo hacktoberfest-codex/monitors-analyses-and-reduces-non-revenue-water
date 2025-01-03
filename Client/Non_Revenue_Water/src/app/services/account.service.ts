@@ -3,6 +3,7 @@ import { HttpClient } from '@angular/common/http';
 import { UserAccount } from '../model/user_account';
 import { environment } from 'src/environments/environment.development';
 import { Complaint } from '../model/complaint';
+import { ContactUs } from '../model/contact';
 
 export const BASE_URL = environment.base_url + '/accounts';
 
@@ -43,6 +44,10 @@ export class AccountService {
     return this.http.put<Complaint>(BASE_URL + "/updatecomplaint", complaint)
   }
 
+  contactUserForm(contact: ContactUs) {
+    return this.http.post(BASE_URL + "/contactus", contact)
+  }
+
   depositBalance(balance: any) {
 
     return this.http.patch(BASE_URL + "/deposit/" + balance, {});
@@ -71,7 +76,7 @@ export class AccountService {
     return this.http.post<UserAccount>(BASE_URL + "/image", formData);
   }
 
-  setImage(account:UserAccount) {
+  setImage(account: UserAccount) {
     const date = new Date();
     return this.http.get(BASE_URL + "/" + account.accountNumber +
       "/image?r=" + date.getTime())

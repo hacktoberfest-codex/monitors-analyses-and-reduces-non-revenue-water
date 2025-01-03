@@ -1,6 +1,7 @@
 package com.nrw.non_revenue_water.model;
 
 import com.nrw.non_revenue_water.constant.ComplaintStatus;
+import com.nrw.non_revenue_water.model.helper.Auditing;
 
 import jakarta.persistence.CascadeType;
 import jakarta.persistence.Entity;
@@ -24,7 +25,7 @@ import lombok.Setter;
 @Setter
 @Entity
 @Builder
-public class Complaint {
+public class Complaint extends Auditing {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int accountId;

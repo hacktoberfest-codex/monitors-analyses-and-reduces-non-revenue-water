@@ -44,15 +44,15 @@
     
     <div class="contribute-form">
         <!-- <h2>Submit Your Contribution</h2> -->
-        <form (ngSubmit)="submitContribution()">
+        <form #contributeform="ngForm" (submit)="submitContribution(contributeform)">
             <div class="form-group">
                 <label for="name"><b>Name:</b></label>
-                <input type="text" id="name" [(ngModel)]="contribution.name" name="name" required>
+                <input type="text" ngModel name="contributionName" required>
             </div>
             
             <div class="form-group">
                 <label for="email"><b>Email:</b></label>
-                <input type="email" id="email" [(ngModel)]="contribution.email" name="email" required>
+                <input type="email" ngModel name="contributionEmail" required>
             </div>
             
             <div class="form-group">
@@ -66,7 +66,7 @@
             
             <div class="form-group">
                 <label for="description"><b>Description:</b></label>
-                <textarea id="description" [(ngModel)]="contribution.description" name="description" rows="5" required></textarea>
+                <textarea id="description" ngModel name="contributionDescription" rows="5" required></textarea>
             </div>
             
             <div class="form-group">

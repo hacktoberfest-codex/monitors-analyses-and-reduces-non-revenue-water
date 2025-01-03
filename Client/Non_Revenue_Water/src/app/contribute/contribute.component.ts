@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { NgForm } from '@angular/forms';
 interface Contribution {
   name: string;
   email: string;
@@ -23,7 +24,7 @@ export class ContributeComponent implements OnInit {
 
   ngOnInit(): void { }
 
-  submitContribution(): void {
+  submitContribution(from: NgForm): void {
     alert('Contribution submitted successfully!');
     console.log(this.contribution);
     // Here you would typically send the contribution data to a server

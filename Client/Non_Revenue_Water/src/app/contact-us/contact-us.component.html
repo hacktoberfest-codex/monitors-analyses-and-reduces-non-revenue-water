@@ -1,0 +1,29 @@
+<header>
+    <app-navbar></app-navbar>
+</header>
+
+<div class="container">
+    <div class="content">
+        <div class="contact-form" id="contact">
+            <h2>Contact Us</h2>
+            <p>If you have any questions or would like to learn more about how to reduce NRW, please contact us
+                using the form below:</p>
+            <form method="post" #contactform="ngForm" (submit)="contactUS(contactform)">
+                <label for="name">Name:</label>
+                <input type="text" id="name" placeholder="Enter your name" name="contactName" required ngModel>
+
+                <label for="email">Email:</label>
+                <input type="email" id="email" placeholder="Enter your email" name="contactEmail" required ngModel>
+
+                <label for="mobile">Mobile Number:</label>
+                <input type="tel" pattern="[0-9]{10}" min="0" maxlength="10" placeholder="Enter a valid mobile Number"
+                    name="contactNumber" required ngModel>
+
+                <label for="message">Message:</label>
+                <textarea name="message" placeholder="Message" rows="4" required ngModel></textarea>
+
+                <input type="submit" class="btn btn-success" [disabled]="!contactform.valid">
+            </form>
+        </div>
+    </div>
+</div>

@@ -41,6 +41,7 @@ import { AboutComponent } from './about/about.component';
 import { ComplaintViewComponent } from './complaint-view/complaint-view.component';
 import { ContributeComponent } from './contribute/contribute.component';
 import { ContributeViewComponent } from './contribute-view/contribute-view.component';
+import { ContactUsComponent } from './contact-us/contact-us.component';
 
 @NgModule({
   declarations: [
@@ -69,6 +70,7 @@ import { ContributeViewComponent } from './contribute-view/contribute-view.compo
     ComplaintViewComponent,
     ContributeComponent,
     ContributeViewComponent,
+    ContactUsComponent,
     
   ],
   imports: [

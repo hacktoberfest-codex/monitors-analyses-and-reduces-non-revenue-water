@@ -3,12 +3,12 @@ import { NgForm } from '@angular/forms';
 import { AccountService } from '../services/account.service';
 
 @Component({
-  selector: 'app-about',
-  templateUrl: './about.component.html',
-  styleUrls: ['./about.component.css']
+  selector: 'app-contact-us',
+  templateUrl: './contact-us.component.html',
+  styleUrls: ['./contact-us.component.css']
 })
-export class AboutComponent {
-  accountService = inject(AccountService);
+export class ContactUsComponent {
+  accountService = inject(AccountService)
   toastHeading = ""; toastDescription = ""; toastVisible = false;
   
   contactUS(form: NgForm) {

@@ -1,8 +1,7 @@
 import { Component, inject, OnInit } from '@angular/core';
 import { NgForm } from '@angular/forms';
-import { Observable } from 'rxjs';
 import { AccountService } from '../services/account.service';
-import { Complaint } from '../model/complaint';
+import { UserAccount } from '../model/user_account';
 
 @Component({
   selector: 'app-complaint',
@@ -13,9 +12,46 @@ export class ComplaintComponent implements OnInit {
   accountService = inject(AccountService);
   complaints: any = []
   toastHeading = ""; toastDescription = ""; toastVisible = false;
+  account!: UserAccount;
   constructor() { }
 
+  // On page load it will call ngOnInit and upadte the complaint status
   ngOnInit(): void {
+
+    // Get the complaint status of the registered complaint
+    this.complaintStatus();
+
+    // Get the name and email of the user from the db
+    this.getAccountNameAndEmail();
+  }
+
+  //Submit Complaint
+  submitComplaint(form: NgForm) {
+    console.log(form.value);
+    if (form.valid) {
+      console.log(form);
+      this.accountService.registerComplaint(form.value)
+        .subscribe({
+          next: res => {
+            // console.log(res);
+
+            this.generateToast("Success", "Complaint submitted successfully");
+            form.reset();
+            this.complaintStatus();// call this method to update the newly registered complaint
+            this.getAccountNameAndEmail();// call this method to update the name and email of the form 
+          },
+          error: err => {
+            console.log(err);
+
+            const error = err.error;
+            this.generateToast(error['title'], error['detail'])
+          }
+        });
+    }
+  }
+
+  //Get Complaint Status
+  complaintStatus() {
     this.accountService.getComplaintStatus().subscribe({
       next: res => {
         this.complaints = res;
@@ -29,33 +65,13 @@ export class ComplaintComponent implements OnInit {
     });
   }
 
-  submitComplaint(form: NgForm) {
-    console.log(form.value);
-    if (form.valid) {
-      // console.log(form);
-      this.accountService.registerComplaint(form.value)
-        .subscribe({
-          next: res => {
-            console.log(res);
-
-            this.generateToast("Success", "Complaint submitted successfully");
-            form.reset();
-            this.complaintStatus();
-          },
-          error: err => {
-            console.log(err);
-
-            const error = err.error;
-            this.generateToast(error['title'], error['detail'])
-          }
-        });
-    }
-  }
-
-  complaintStatus() {
-    this.accountService.getComplaintStatus().subscribe({
+  //Get account name and email from db to autofill the name and email filed of the complaint form 
+  getAccountNameAndEmail() {
+    this.accountService.getCurrentAccount().subscribe({
       next: res => {
-        this.complaints = res;
+        this.account = res;
+        // console.log(res);
+
       },
       error: err => {
         console.log(err);

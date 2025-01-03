@@ -1,99 +1,75 @@
-import { Component } from '@angular/core';
+import { Component, inject, OnInit } from '@angular/core';
+import { UserDashboard } from '../model/user_dashboard';
+import { DashboardService } from '../services/dashboard.service';
 
 @Component({
   selector: 'app-dashboard',
   templateUrl: './dashboard.component.html',
   styleUrls: ['./dashboard.component.css']
 })
-export class DashboardComponent {
-  revenue=3000
-  complaints=150
-  newConnections=300
-  houseRegistered=9165
-  previousMonthRevenue=127589
-  currentMonthRevenue=90000
-  waterOutflow=61000
-  waterInflow=60000
-  totalLoss=this.waterOutflow-this.waterInflow
-  data = [
-    {
-      "name": "France",
-      "value": 36745,
-      
-    },
-    {
-      "name": "Spain",
-      "value": 33000,
-      
-    },
-    {
-      "name": "Tanzania",
-      "value": 25589
-    },
-    {
-      "name": "Turkmenistan",
-      "value": 10354
-    },
-    {
-      "name": "Guam",
-      "value": 57436
-    },
-    {
-      "name": "Bermuda",
-      "value": 35577
-    }
-  ];
+export class DashboardComponent implements OnInit {
+
+  revenue = 3000
+  complaints = 150
+  newConnections = 300
+  houseRegistered = 9165
+  previousMonthRevenue = 127589
+  currentMonthRevenue = 90000
+  waterOutflow = 61000
+  waterInflow = 60000
+  totalLoss = this.waterOutflow - this.waterInflow
+
   view: any[] = [1000, 1000];
   showXAxis: boolean = true;
   showYAxis: boolean = true;
   gradient: boolean = true;
-  colorScheme: any = { domain: ['#5AA454', '#E44D25', '#CFC0BB', '#7aa3e5','#a8385d','#aae3f5'] };
+  colorScheme: any = { domain: ['#5AA454', '#E44D25', '#CFC0BB', '#7aa3e5', '#a8385d', '#aae3f5'] };
   showLegend: boolean = true;
   showXAxisLabel: boolean = true;
   showYAxisLabel: boolean = true;
-  xAxisLabel = "Month"
-  yAxisLabel = "Revenue"
+  xAxisLabel = "Months"
+  yAxisLabel = "Water Usage"
   legendTitle = "Users"
   cardColor: string = "#232837";
   data1: any = [
     {
-      "name": "Outflow",
+      "name": "User",
       "series": [
         {
           "name": "Jan",
-          "value": "15000"
+          "value": "50000"
         },
         {
           "name": "Feb",
-          "value": "12000"
+          "value": "26000"
         },
         {
-          "name": "Mar",
-          "value": "25000"
+          "name": "March",
+          "value": "63000"
         },
         {
-          "name": "Apr",
-          "value": "1000"
+          "name": "April",
+          "value": "60000"
         },
         {
           "name": "May",
-          "value": "30000"
-        },
+          "value": "80000"
+        },//test
         {
           "name": "June",
-          "value": "40000"
+          "value": "100000"
         },
         {
           "name": "July",
-          "value": "35000"
+          "value": "40000"
         },
         {
           "name": "Aug",
-          "value": "10000"
+          "value": "90000"
         },
         {
           "name": "Sept",
-          "value": "39000"
+          "value": "85000"
         },
         {
           "name": "Oct",
@@ -101,75 +77,72 @@ export class DashboardComponent {
         },
         {
           "name": "Nov",
-          "value": "20000"
+          "value": "90000"
         },
         {
           "name": "Dec",
-          "value": "34000"
+          "value": "120000"
         }
       ],
-      
     },
-    {
-      "name": "Inflow",
-      "series": [
-        {
-          "name": "Jan",
-          "value": "12000"
-        },
-        {
-          "name": "Feb",
-          "value": "9000"
-        },
-        {
-          "name": "Mar",
-          "value": "19000"
-        },
-        {
-          "name": "Apr",
-          "value": "10"
-        },
-        {
-          "name": "May",
-          "value": "21000"
-        },
-        {
-          "name": "June",
-          "value": "30000"
-        },
-        {
-          "name": "July",
-          "value": "34000"
-        },
-        {
-          "name": "Aug",
-          "value": "8000"
-        },
-        {
-          "name": "Sept",
-          "value": "35000"
-        },
-        {
-          "name": "Oct",
-          "value": "45000"
-        },
-        {
-          "name": "Nov",
-          "value": "15000"
-        },
-        {
-          "name": "Dec",
-          "value": "30000"
-        }
-      ],
-      
-    },
-    
-    
   ]
 
+  view1: any[] = [700, 400];
+
+  // options
+  showXAxis1 = true;
+  showYAxis1 = true;
+  gradient1 = false;
+  showLegend1 = true;
+  showXAxisLabel1 = true;
+  xAxisLabel1 = 'Day';
+  showYAxisLabel1 = true;
+  yAxisLabel1 = 'Water Usage';
+  legendTitle1 = "Days"
+  colorScheme1: any = {
+    domain: ['#5AA454', '#A10A28', '#C7B42C', '#AAAAAA', '#a8385d', '#7aa3e5', '#E44D25']
+  };
+
+  data2: any = [
+    {
+      "name": "Monday",
+      "value": 89400
+    },
+    {
+      "name": "Tuesday",
+      "value": 50000
+    },
+    {
+      "name": "Wednesday",
+      "value": 72000
+    },
+    {
+      "name": "Thursday",
+      "value": 42000
+    },
+    {
+      "name": "Friday",
+      "value": 15000
+    },
+    {
+      "name": "Saturday",
+      "value": 28000
+    },
+    {
+      "name": "Sunday",
+      "value": 62000
+    }
+  ];
+
+  dashboardService = inject(DashboardService);
+  userDashboard!: UserDashboard;
   ngOnInit(): void {
     console.log('dashboard')
+    this.dashboardService.getUserDashboardDetails().subscribe({
+      next: res => {
+        this.userDashboard = res;
+      }
+    });
   }
 
 }

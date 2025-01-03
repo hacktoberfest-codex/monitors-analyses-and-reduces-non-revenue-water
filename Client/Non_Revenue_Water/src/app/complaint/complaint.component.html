@@ -1,15 +1,16 @@
 <div class="complaint-container">
   <div class="form-container">
     <h2>Register a Complaint</h2>
+    <!-- Take the name and email from db so that user can't change -->
     <form method="post" #complaintform="ngForm" (submit)="submitComplaint(complaintform)">
       <label for="name">Name:</label>
-      <input type="text" name="accountHolderName" required ngModel>
+      <input type="text" name="accountHolderName" required [(ngModel)]="account.accountHolderName">
 
       <label for="email">Email:</label>
-      <input type="email" name="accountEmail" required ngModel>
+      <input type="email" name="accountEmail" required [(ngModel)]="account.accountEmail">
 
       <label for="description">Description:</label>
-      <textarea name="complaintDescription" rows="4" required ngModel></textarea>
+      <textarea name="complaintDescription" placeholder="Complaint Description" rows="4" required ngModel></textarea>
 
       <input type="submit" class="btn btn-success" [disabled]="!complaintform.valid">
     </form>
@@ -20,16 +21,18 @@
     <table class="complaints-table">
       <thead>
         <tr>
+          <th>Account No.</th>
           <th>Name</th>
-          <th>Email</th>
-          <th>Description</th>
+          <!-- <th>Email</th> -->
+          <th>Complaint Description</th>
           <th>Status</th>
         </tr>
       </thead>
       <tbody>
         <tr *ngFor="let complaint of complaints" class="complaint-row">
+          <td>{{ account.accountNumber }}</td>
           <td>{{ complaint.accountHolderName }}</td>
-          <td>{{ complaint.accountEmail }}</td>
+          <!-- <td>{{ complaint.accountEmail }}</td> -->
           <td>{{ complaint.complaintDescription }}</td>
           <td>{{ complaint.complaintStatus }}</td>
         </tr>

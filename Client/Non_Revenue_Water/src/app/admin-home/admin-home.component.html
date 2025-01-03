@@ -7,16 +7,16 @@
             <i class="fa-solid fa-circle-xmark"></i>
         </mat-icon>
     </button>
-    Drop By Drop
+    DROP BY DROP
 </mat-toolbar>
 
 <mat-sidenav-container>
     <mat-sidenav #sidenav="matSidenav" class="mat-elevation-z8">
         <img class="avatar mat-elevation-z8" src="../../assets/som.jpg" />
 
-        <h4 class="name">Soumendra</h4>
-        <p class="designation">Admin</p>
-
+        <h4 class="name">{{account.accountHolderName}}</h4>
+        <p class="designation">{{account.accountType}}</p>
+        
         <mat-divider></mat-divider>
         <button mat-button class="menu-button" (click)="tabChange('dashboard')">
             <!-- <mat-icon><i class="fa-solid fa-house"></i></mat-icon> -->
@@ -30,10 +30,10 @@
             <!-- <mat-icon>person</mat-icon> -->
             <i class="fas fa-user"></i> Profile
         </button>
-        <button mat-button class="menu-button" (click)="tabChange('contribute')">
-            <!-- <mat-icon>info</mat-icon> -->
-            <i class="fa-solid fa-bell"></i> Contribute
-        </button>
+        <!-- temporarly removed -->
+        <!-- <button mat-button class="menu-button" (click)="tabChange('contribute')">
+            <i class="fa-solid fa-bell"></i> Contributions
+        </button> -->
         <button mat-button class="menu-button" (click)="tabChange('about')">
             <!-- <mat-icon>info</mat-icon> -->
             <i class="fa-solid fa-circle-info"></i> About
@@ -51,7 +51,7 @@
             <app-admin-dashboard *ngIf="page === 'dashboard'"></app-admin-dashboard>
             <app-complaint-view *ngIf="page === 'complaint'"></app-complaint-view>
             <app-profile *ngIf="page === 'profile'"></app-profile>
-            <app-contribute-view *ngIf="page === 'contribute'"></app-contribute-view>
+            <!-- <app-contribute-view *ngIf="page === 'contribute'"></app-contribute-view> -->
             <app-about *ngIf="page === 'about'"></app-about>
         </div>
     </mat-sidenav-content>

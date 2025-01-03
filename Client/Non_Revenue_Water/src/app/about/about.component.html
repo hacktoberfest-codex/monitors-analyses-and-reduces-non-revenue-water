@@ -68,17 +68,17 @@
             <h2>Contact Us</h2>
             <p>If you have any questions or would like to learn more about how to reduce NRW, please contact us
                 using the form below:</p>
-            <form>
+            <form method="post" #contactform="ngForm" (submit)="contactUS(contactform)">
                 <label for="name">Name:</label>
-                <input type="text" id="name" name="name" required>
+                <input type="text" name="contactName" required ngModel>
 
                 <label for="email">Email:</label>
-                <input type="email" id="email" name="email" required>
+                <input type="email" name="contactEmail" required ngModel>
 
                 <label for="message">Message:</label>
-                <textarea id="message" name="message" rows="4" required></textarea>
+                <textarea name="message" rows="4" required ngModel></textarea>
 
-                <button type="submit">Submit</button>
+                <input type="submit" class="btn btn-success" [disabled]="!contactform.valid">
             </form>
         </div>
     </div>

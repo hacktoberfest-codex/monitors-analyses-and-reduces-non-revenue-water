@@ -4,6 +4,7 @@ import java.util.List;
 
 import org.springframework.stereotype.Service;
 
+import com.nrw.non_revenue_water.constant.AccountType;
 import com.nrw.non_revenue_water.constant.ComplaintStatus;
 import com.nrw.non_revenue_water.model.Account;
 import com.nrw.non_revenue_water.model.Complaint;
@@ -38,8 +39,17 @@ public class ComplaintServiceImpl implements IComplaintService {
 
     @Override
     public Complaint registerComplaint(Complaint complaint, Account account) {
-        complaint.setAccount(account);
-        complaint.setComplaintStatus(ComplaintStatus.PENDING);
+        int numberOfComplaint = account.getNumberOfComplaints();//Get the no. of complaints of the user
+        account.setNumberOfComplaints(numberOfComplaint + 1);//Update the number of complaints by 1
+        accountRepository.save(account);//Save the changes
+
+        Account adminAccount = accountRepository.findByAccountType(AccountType.ADMIN).orElseThrow();//Get the admin account from db
+        int numberOfComplaintAdmin = adminAccount.getNumberOfComplaints();//Get the no. of complaints of the ADMIN
+        adminAccount.setNumberOfComplaints(numberOfComplaintAdmin + 1);//Update the number of complaints by 1
+        accountRepository.save(adminAccount);//Save the changes
+
+        complaint.setAccount(account);//Map the complaint to the user
+        complaint.setComplaintStatus(ComplaintStatus.PENDING);//Initially set the staus of the complaints to PENDING
         complaintRepository.save(complaint);
         return complaint;
     }

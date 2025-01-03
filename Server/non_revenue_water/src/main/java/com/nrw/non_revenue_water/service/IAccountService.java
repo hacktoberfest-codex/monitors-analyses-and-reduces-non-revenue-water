@@ -20,11 +20,15 @@ public interface IAccountService {
 
     Optional<Account> getAccountBalanaceAndNumberOfComplaints(long accountNumber);
 
+    double getAdminTodaysRevenue();
+
     // CompletableFuture<Integer> getNumberOfComplaints(long accountNumber);
 
     Account uploadProfilePicture(long accountNumber, MultipartFile file) throws FileNotFoundException, Exception;
 
     byte[] getProfilePicture(long accountNumber) throws Exception;
+
+    void depositBalance(long accountNumber, double balance);
 
     
 

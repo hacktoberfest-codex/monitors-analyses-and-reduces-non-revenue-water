@@ -7,28 +7,28 @@
             <i class="fa-solid fa-circle-xmark"></i>
         </mat-icon>
     </button>
-    Drop By Drop
+    DROP BY DROP
 </mat-toolbar>
 
 <mat-sidenav-container>
     <mat-sidenav #sidenav="matSidenav" class="mat-elevation-z8">
-        <img class="avatar mat-elevation-z8" src="../../assets/som.jpg" />
+        <img class="avatar mat-elevation-z8" src="../../assets/images.png" />
 
-        <h4 class="name">Soumendra</h4>
-        <p class="designation">Admin</p>
+        <h4 class="name">{{account.accountHolderName}}</h4>
+        <p class="designation">{{account.accountNumber}}</p>
 
         <mat-divider></mat-divider>
         <button mat-button class="menu-button" (click)="tabChange('dashboard')">
             <!-- <mat-icon><i class="fa-solid fa-house"></i></mat-icon> -->
             <i class="fas fa-tachometer-alt"></i> Dashboard
         </button>
-        <button mat-button class="menu-button" (click)="tabChange('waterusage')">
-            <!-- <mat-icon>info</mat-icon> -->
+        <!-- <button mat-button class="menu-button" (click)="tabChange('waterusage')">
+           
             <i class="fas fa-tint"></i> Water Usage
-        </button>
+        </button> -->
         <button mat-button class="menu-button" (click)="tabChange('paybill')">
             <!-- <mat-icon>info</mat-icon> -->
-            <i class="fas fa-money-check"></i> Pay Bill
+            <i class="fas fa-money-check"></i> Wallet
         </button>
         <button mat-button class="menu-button" (click)="tabChange('complaint')">
             <!-- <mat-icon>info</mat-icon> -->
@@ -38,10 +38,10 @@
             <!-- <mat-icon>person</mat-icon> -->
             <i class="fas fa-user"></i> Profile
         </button>
-        <button mat-button class="menu-button" (click)="tabChange('contribute')">
-            <!-- <mat-icon>info</mat-icon> -->
+        <!-- temporarily removed -->
+        <!-- <button mat-button class="menu-button" (click)="tabChange('contribute')">
             <i class="fa-solid fa-bell"></i> Contribute
-        </button>
+        </button> -->
         <button mat-button class="menu-button" (click)="tabChange('about')">
             <!-- <mat-icon>info</mat-icon> -->
             <i class="fa-solid fa-circle-info"></i> About
@@ -57,10 +57,11 @@
     <mat-sidenav-content>
         <div class="content mat-elevation-z8">
             <app-dashboard *ngIf="page === 'dashboard'"></app-dashboard>
-            <app-water-usage *ngIf="page === 'waterusage'"></app-water-usage>
+            <!-- <app-water-usage *ngIf="page === 'waterusage'"></app-water-usage> -->
             <app-paybill *ngIf="page === 'paybill'"></app-paybill>
             <app-complaint *ngIf="page === 'complaint'"></app-complaint>
             <app-profile *ngIf="page === 'profile'"></app-profile>
+            <!-- <app-contribute *ngIf="page == 'contribute'"></app-contribute> -->
             <app-about *ngIf="page === 'about'"></app-about>
         </div>
     </mat-sidenav-content>

@@ -1,4 +1,4 @@
-<div class="container">
+<!-- <div class="container">
     <div class="row">
         <div class="col-md-6">
             <div class="card">
@@ -7,12 +7,6 @@
                         background: -webkit-linear-gradient(to right, #182848, #4b6cb7);
                         background: linear-gradient(to right, #182848, #4b6cb7);
                         color: var(--primary-white);">Water Bill</h4>
-
-                    <!-- <ngx-charts-line-chart [view]="[500,300]" [scheme]="colorScheme" [results]="data1"
-                        [gradient]="gradient" [xAxis]="showXAxis" [yAxis]="showYAxis" [legend]="showLegend"
-                        [showXAxisLabel]="showXAxisLabel" [showYAxisLabel]="showYAxisLabel" [xAxisLabel]="xAxisLabel"
-                        [yAxisLabel]="yAxisLabel" [legendTitle]="legendTitle" [animations]="true">
-                    </ngx-charts-line-chart> -->
                     <form method="post" #depositForm="ngForm" (ngSubmit)="onDeposit(depositForm)" autocomplete="off">
                         <div class="form-group">
                             <label for="cc_name">Card Holder's Name</label>
@@ -44,11 +38,57 @@
                             </div>
                             <div class="col-md-4">
                                 <select class="form-control" name="cc_exp_yr" size="0">
+                                    <option>2000</option>
+                                    <option>2001</option>
+                                    <option>2002</option>
+                                    <option>2003</option>
+                                    <option>2004</option>
+                                    <option>2005</option>
+                                    <option>2006</option>
+                                    <option>2007</option>
+                                    <option>2008</option>
+                                    <option>2009</option>
+                                    <option>2010</option>
+                                    <option>2011</option>
+                                    <option>2012</option>
+                                    <option>2013</option>
+                                    <option>2014</option>
+                                    <option>2015</option>
+                                    <option>2016</option>
+                                    <option>2017</option>
                                     <option>2018</option>
                                     <option>2019</option>
                                     <option>2020</option>
                                     <option>2021</option>
                                     <option>2022</option>
+                                    <option>2023</option>
+                                    <option>2024</option>
+                                    <option>2025</option>
+                                    <option>2026</option>
+                                    <option>2027</option>
+                                    <option>2028</option>
+                                    <option>2029</option>
+                                    <option>2030</option>
+                                    <option>2031</option>
+                                    <option>2032</option>
+                                    <option>2033</option>
+                                    <option>2034</option>
+                                    <option>2035</option>
+                                    <option>2036</option>
+                                    <option>2037</option>
+                                    <option>2038</option>
+                                    <option>2039</option>
+                                    <option>2040</option>
+                                    <option>2041</option>
+                                    <option>2042</option>
+                                    <option>2043</option>
+                                    <option>2044</option>
+                                    <option>2045</option>
+                                    <option>2046</option>
+                                    <option>2047</option>
+                                    <option>2048</option>
+                                    <option>2049</option>
+                                    <option>2050</option>
                                 </select>
                             </div>
                             <div class="col-md-4">
@@ -86,7 +126,7 @@
         <div class="col-md-6">
             <div class="card">
                 <div class="header">
-                    <h4 class="title">Table with Links</h4>
+                    <h4 class="title">Recent Transactions</h4>
                     <p class="category">Here is a subtitle for this table</p>
                 </div>
                 <div class="content table-responsive table-full-width">
@@ -100,7 +140,7 @@
                                 <th class="text-right">Actions</th>
                             </tr>
                         </thead>
-                        <tbody><!---->
+                        <tbody>
                             <tr>
                                 <td class="text-center">1</td>
                                 <td>Andrew Mike</td>
@@ -175,4 +215,25 @@
 
     </div>
 
-</div>
+</div> -->
+
+<!-- For temporary use -->
+<div class="complaint-container">
+    <div class="form-container">
+      <h2>Topup Wallet</h2>
+      <!-- Take the name and email from db so that user can't change -->
+      <form method="post" #paybill="ngForm" (submit)="onDeposit(paybill)">
+        <!-- <label for="name">Account Number:</label>
+        <input type="text" name="accountNumber" required ngModel> -->
+
+        <label for="deposit">Amount:</label>
+        <input type="number" name="depositAmount" min="0" required ngModel>
+
+        <label for="description">Description (if any):</label>
+        <input type="text" name="depositDescription" ngModel>
+
+        <input type="submit" class="btn btn-success" [disabled]="!paybill.valid">
+      </form>
+    </div>
+  </div>
+  <app-toast *ngIf="toastVisible" [heading]="toastHeading" [description]="toastDescription"></app-toast>

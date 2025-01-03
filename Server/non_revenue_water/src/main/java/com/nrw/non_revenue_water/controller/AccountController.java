@@ -7,6 +7,7 @@ import org.springframework.http.MediaType;
 import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PatchMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
@@ -94,13 +95,13 @@ public class AccountController {
 
     }
 
-    // Register complaint for user
+    // Register complaint for user and update the number of complaints of the user and admin
     @PostMapping("/registercomplaint")
     @ResponseStatus(HttpStatus.ACCEPTED)
     public ComplaintResponseDTO registerComplaint(@Valid @RequestBody ComplaintRequestDTO complaintRequest) {
         var complaint = ComplaintMapper.modelMapperComplaint(complaintRequest);
         var email = complaint.getAccountEmail();
-        var account = accountService.getAccountByEmail(email);
+        var account = accountService.getAccountByEmail(email); // Check if the user exists or not
         var res = complaintService.registerComplaint(complaint, account);
         return ComplaintMapper.dtoMapper(res);
     }
@@ -136,6 +137,13 @@ public class AccountController {
     @GetMapping(value = "/{accountNumber}/image", produces = { MediaType.IMAGE_PNG_VALUE, MediaType.IMAGE_JPEG_VALUE })
     public byte[] getImage(@PathVariable long accountNumber) throws Exception {
         return accountService.getProfilePicture(accountNumber);
+    }
+
+    // Deposit amount for user
+    @PatchMapping("/deposit/{balance}")
+    @ResponseStatus(HttpStatus.NO_CONTENT)
+    public void deposit(@RequestAttribute long accountNumber, @PathVariable double balance) {
+        accountService.depositBalance(accountNumber, balance);
     }
 
 }

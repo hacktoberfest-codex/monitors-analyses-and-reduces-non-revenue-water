@@ -1,6 +1,5 @@
 package com.nrw.non_revenue_water.service.impl;
 
-
 import java.io.FileInputStream;
 import java.io.FileOutputStream;
 import java.util.NoSuchElementException;
@@ -13,9 +12,14 @@ import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 import org.springframework.web.multipart.MultipartFile;
 
+import com.nrw.non_revenue_water.constant.AccountType;
+import com.nrw.non_revenue_water.constant.TransactionMode;
 import com.nrw.non_revenue_water.model.Account;
+import com.nrw.non_revenue_water.model.Transaction;
 import com.nrw.non_revenue_water.repository.AccountRepository;
+import com.nrw.non_revenue_water.repository.AdminAccountRepository;
 import com.nrw.non_revenue_water.service.IAccountService;
+import com.nrw.non_revenue_water.service.ITransactionService;
 import com.nrw.non_revenue_water.utility.GenerateAccountNumber;
 
 import lombok.RequiredArgsConstructor;
@@ -24,11 +28,12 @@ import lombok.RequiredArgsConstructor;
 @RequiredArgsConstructor
 public class AccountServiceImpl implements IAccountService {
     private final AccountRepository accountRepository;
+    private final AdminAccountRepository adminAccountRepository;
     private final PasswordEncoder passwordEncoder;
+    private final ITransactionService transactionService;
 
     @Value("${upload.file.name}")
     private String uploadFileLocation;
-
 
     @Override
     public Account createAccount(Account account) {
@@ -59,7 +64,7 @@ public class AccountServiceImpl implements IAccountService {
 
     // @Override
     // public List<Complaint> getAllComplaints() {
-    //     return complaintRepository.findAll();
+    // return complaintRepository.findAll();
     // }
 
     @Override
@@ -67,7 +72,39 @@ public class AccountServiceImpl implements IAccountService {
         return accountRepository.findByAccountNumber(accountNumber).orElseThrow();
     }
 
-     @Override
+    @Override
+    public void depositBalance(long accountNumber, double balance) {
+        getAccount(accountNumber);
+        accountRepository.addBalance(accountNumber, balance);
+
+        // Get Admin Account
+        var adminAccount = accountRepository.findByAccountType(AccountType.ADMIN).orElseThrow();
+        var adminAccountNumber = adminAccount.getAccountNumber();
+
+        // Update this balance in the admins total revenue
+        accountRepository.addBalance(adminAccountNumber, balance);
+
+        // Add this balance in todays revenue of the admin
+        var adminTodaysRevenue = adminAccount.getAdminAccount();
+        adminTodaysRevenue.setTodaysRevenue(balance);
+        adminAccountRepository.save(adminTodaysRevenue);
+
+        // User Transaction
+        var transaction = new Transaction();
+        transaction.setMode(TransactionMode.CREDIT);
+        transaction.setAmount(balance);
+
+        transactionService.addTransaction(transaction, accountNumber);
+
+        // Admin Transaction
+        var adminTransaction = new Transaction();
+        adminTransaction.setMode(TransactionMode.CREDIT);
+        adminTransaction.setAmount(balance);
+
+        transactionService.addTransaction(adminTransaction, adminAccountNumber);
+    }
+
+    @Override
     public Account uploadProfilePicture(long accountNumber, MultipartFile file) throws Exception {
         var account = getAccount(accountNumber);
 
@@ -98,6 +135,13 @@ public class AccountServiceImpl implements IAccountService {
         fis.close();
 
         return image;
+    }
+
+    @Override
+    public double getAdminTodaysRevenue() {
+        var adminAccount = accountRepository.findByAccountType(AccountType.ADMIN).orElseThrow();
+        var todaysRevenue = adminAccount.getAdminAccount().getTodaysRevenue();
+        return todaysRevenue;
     }
 
 }

@@ -13,6 +13,7 @@ import { UserHomeComponent } from './user-home/user-home.component';
 import { AdminLoginComponent } from './admin-login/admin-login.component';
 import { AdminSignupComponent } from './admin-signup/admin-signup.component';
 import { AdminHomeComponent } from './admin-home/admin-home.component';
+import { ContactUsComponent } from './contact-us/contact-us.component';
 
 
 export const routes: Routes = [
@@ -29,7 +30,8 @@ export const routes: Routes = [
   { path: "help", component: HelpFaqComponent },
   { path: "userhome", component: UserHomeComponent },
   { path: "adminhome", component: AdminHomeComponent },
-  { path: "", pathMatch: "full", redirectTo: "login" },
+  { path: "contactus", component: ContactUsComponent },
+  { path: "", pathMatch: "full", redirectTo: "home" },
   { path: "**", redirectTo: "login" },
 
 ];
